@@ -1,9 +1,9 @@
 import pandas as pd
-import numpy as np
 import os
 
-DESCRIPTION_FILE = 'Headers-analysis/headers_description.txt'
-NAME_LIST_FILE = 'Headers-analysis/headers.txt'
+PATH_DESCRIPTION_FILE = 'Metadata-analysis/headers_description.txt'
+PATH_LIST_FILE = 'Metadata-analysis/z - filenames.txt'
+PATH_CSV_FILE = 'Metadata-analysis/filenames.csv'
 BASE_DIR = 'Battery_Archive_Data'
 
 
@@ -176,17 +176,17 @@ if __name__ == '__main__':
         os.makedirs('Headers-analysis')
         
     # Limpa/Cria arquivos de saída
-    open(DESCRIPTION_FILE, 'w', encoding='utf-8').close()
-    open(NAME_LIST_FILE, 'w', encoding='utf-8').close()
-    print(f"Arquivos {DESCRIPTION_FILE} e {NAME_LIST_FILE} limpos ou criados")
+    open(PATH_DESCRIPTION_FILE, 'w', encoding='utf-8').close()
+    open(PATH_LIST_FILE, 'w', encoding='utf-8').close()
+    print(f"Arquivos {PATH_DESCRIPTION_FILE} e {PATH_LIST_FILE} limpos ou criados")
 
-    with open(DESCRIPTION_FILE, 'w', encoding='utf-8') as desc:
+    with open(PATH_DESCRIPTION_FILE, 'w', encoding='utf-8') as desc:
         subfolders = get_subfolders(BASE_DIR)
         for folder in subfolders:
-            process_folder(folder, BASE_DIR, desc, NAME_LIST_FILE)
-    print(f"Arquivos {DESCRIPTION_FILE} e {NAME_LIST_FILE} atualizados")
+            process_folder(folder, BASE_DIR, desc, PATH_LIST_FILE)
+    print(f"Arquivos {PATH_DESCRIPTION_FILE} e {PATH_LIST_FILE} atualizados")
             
-    df = build_dataframe_from_names(NAME_LIST_FILE)
-    df.to_csv('Headers-analysis/headers.csv', index=False, encoding='utf-8')
-    print("Arquivo headers.csv atualizado")
+    df = build_dataframe_from_names(PATH_LIST_FILE)
+    df.to_csv(PATH_CSV_FILE, index=False, encoding='utf-8')
+    print(f"Arquivo {PATH_CSV_FILE} atualizado")
     print("Análise concluida com sucesso")
