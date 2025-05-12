@@ -19,12 +19,12 @@ def get_header(file_path):
 
 def write_description(out_file, folder_name, section_title, files, base_dir):
     out_file.write(f"-- {section_title} --\n")
-    print(f"-- {section_title} --")
+    # print(f"-- {section_title} --")
     for filename in files:
         file_path = os.path.join(base_dir, folder_name, filename)
         header = get_header(file_path)
         out_file.write(f"{filename}:\n{header}\n\n")
-        print(f"{filename}: {header}")
+        # print(f"{filename}: {header}")
 
 def record_filename(name_list_file, filename):
     with open(name_list_file, 'a', encoding='utf-8') as f:
@@ -33,7 +33,7 @@ def record_filename(name_list_file, filename):
 def process_folder(folder_name, base_dir, description_file, name_list_file):
     folder_path = os.path.join(base_dir, folder_name)
     description_file.write(f"\n=== Folder: {folder_name} ===\n")
-    print(f"\n=== Folder: {folder_name} ===")
+    # print(f"\n=== Folder: {folder_name} ===")
 
     # Timeseries
     ts_files = find_csv_files(folder_path, 'timeseries')
@@ -44,7 +44,7 @@ def process_folder(folder_name, base_dir, description_file, name_list_file):
         write_description(description_file, folder_name, 'Timeseries files and headers', ts_files, base_dir)
     else:
         description_file.write("No timeseries files found.\n")
-        print("No timeseries files found.")
+        # print("No timeseries files found.")
 
     # Cycle data
     cd_files = find_csv_files(folder_path, 'cycle_data')
@@ -52,19 +52,38 @@ def process_folder(folder_name, base_dir, description_file, name_list_file):
         write_description(description_file, folder_name, 'Cycle_data files and headers', cd_files, base_dir)
     else:
         description_file.write("No cycle_data files found.\n")
-        print("No cycle_data files found.")
+        # print("No cycle_data files found.")
 
 def parse_filename_components(filename):
-    # Remove extensão .csv antes de splitar
+    # Remove extensão .csv e splita por '_'
     name = os.path.splitext(filename)[0]
     return name.split('_')
 
-def process_filename(dict: dict, components: list):
-    # Processa os componentes do nome do arquivo
+# formata components e elimina exceções
+def pre_process(components: list):
     # Observaçoes:
     # - HNEI não tem cell id e tem dois form factors
     # - Michigan pode não ter o 8° componente
     # - SNL não tem cell id
+    
+    if components[0] == 'HNEI':
+        # Adiciona o cell id
+        components.insert(1, '-')
+        # Junta components 3 e 4
+        components[3] = components[3] + '-' + components[4]
+        components.pop(4)
+    elif components[0] == 'MICH':
+        # Adiciona o oitavo componente
+        if components[7] == 'timeseries':
+            components.insert(7, '-')
+    elif components[0] == 'SNL':
+        # Adiciona o cell id
+        components.insert(1, '-')
+    return components
+        
+# formata components e adiciona ao dicionário
+def process_filename(data_dict: dict, components: list):
+    components = pre_process(components)
     
     institution_dict = {
         'CALCE'  : 'Calce',
@@ -85,30 +104,61 @@ def process_filename(dict: dict, components: list):
         '46800'  : '46800',
     }
     
+    # Instituição
     components[0] = institution_dict[components[0]] if components[0] in institution_dict else components[0]
+    data_dict['Institution'].append(components[0])
+
+    # Cell ID
     # components[1] = components[1]
-    components[2] = formFactor_dict[components[2]] if components[2] in formFactor_dict else components[2]    
+    data_dict['Cell ID'].append(components[1])
+
+    # Form Factor
+    components[2] = formFactor_dict[components[2]] if components[2] in formFactor_dict else components[2]
+    data_dict['Form Factor'].append(components[2])
+
+    # Cathode
+    # components[3] = components[3]  
+    data_dict['Cathode'].append(components[3])
     
-    # Alguns nomes de arquivos vem com form factor e cathode trocados
-    if components[3] in ['Pouch', 'pouch', '']:
-        
+    # Temperature
+    components[4] = components[4].replace('C', '')
+    data_dict['Temperature (°C)'].append(components[4])
     
-def build_dataframe_from_names(name_list_file):    
+    # Min-Max SOC
+    min, max = components[5].split('-')
+    components[5] = max
+    components.insert(5, min)
+    data_dict['Min SOC (%)'].append(components[5])
+    data_dict['Max SOC (%)'].append(components[6])
+    
+    # Charge-Discharge Rate
+    charge, discharge = components[7].split('-')
+    components[7] = discharge.replace('C', '')
+    components.insert(7, charge)
+    data_dict['Charge Rate (C)'].append(components[7])
+    data_dict['Discharge Rate (C)'].append(components[8])
+    
+    # Group
+    # components[9] = components[9]
+    data_dict['Group'].append(components[9])
+    
+    return data_dict
+
+def build_dataframe_from_names(name_list_file):
     # Cria e define o nome das colunas do DataFrame
     data_dict = {
         'Institution'       : [],
         'Cell ID'           : [],
-        'Group?'            : [],
         'Form Factor'       : [],
         'Cathode'           : [],
         'Temperature (°C)'  : [],
         'Min SOC (%)'       : [],
         'Max SOC (%)'       : [],
         'Charge Rate (C)'   : [],
-        'Discharge Rate (C)': []
+        'Discharge Rate (C)': [],
+        'Group'             : []
     }
-    
-    data = []
+
     with open(name_list_file, 'r', encoding='utf-8') as f:
         for line in f:
             filename = line.strip()
@@ -117,7 +167,7 @@ def build_dataframe_from_names(name_list_file):
             data_dict = process_filename(data_dict, components)
 
     df = pd.DataFrame(data_dict)
-    df = df.replace('', np.nan)  # Substitui strings vazias por NaN
+    df = df.replace('', 'WARNING')
     return df
 
 if __name__ == '__main__':
@@ -128,11 +178,15 @@ if __name__ == '__main__':
     # Limpa/Cria arquivos de saída
     open(DESCRIPTION_FILE, 'w', encoding='utf-8').close()
     open(NAME_LIST_FILE, 'w', encoding='utf-8').close()
+    print(f"Arquivos {DESCRIPTION_FILE} e {NAME_LIST_FILE} limpos ou criados")
 
     with open(DESCRIPTION_FILE, 'w', encoding='utf-8') as desc:
         subfolders = get_subfolders(BASE_DIR)
         for folder in subfolders:
             process_folder(folder, BASE_DIR, desc, NAME_LIST_FILE)
+    print(f"Arquivos {DESCRIPTION_FILE} e {NAME_LIST_FILE} atualizados")
             
     df = build_dataframe_from_names(NAME_LIST_FILE)
-    #df.to_csv('Headers-analysis/headers.csv', index=False, encoding='utf-8')
+    df.to_csv('Headers-analysis/headers.csv', index=False, encoding='utf-8')
+    print("Arquivo headers.csv atualizado")
+    print("Análise concluida com sucesso")

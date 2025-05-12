@@ -1,0 +1,197 @@
+Institution,Cell ID,Form Factor,Cathode,Temperature (°C),Min SOC (%),Max SOC (%),Charge Rate (C),Discharge Rate (C),Group
+Calce,CX2-16,Prismatic,LCO,25,0,100,0.5,0.5,a
+Calce,CX2-25,Prismatic,LCO,25,0,100,0.5,0.5,b
+Calce,CX2-33,Prismatic,LCO,25,0,100,0.5,0.5,d
+Calce,CX2-34,Prismatic,LCO,25,0,100,0.5,0.5,e
+Calce,CX2-36,Prismatic,LCO,25,0,100,0.5,0.5,f
+Calce,CX2-37,Prismatic,LCO,25,0,100,0.5,0.5,g
+Calce,CX2-38,Prismatic,LCO,25,0,100,0.5,0.5,h
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,a
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,b
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,c
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,d
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,e
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,f
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,g
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,j
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,l
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,m
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,n
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,o
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,p
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,s
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,t
+Michigan Expansion,01R,Pouch,NMC,25,0,100,0.2,0.2,-
+Michigan Expansion,02C,Pouch,NMC,-5,0,100,0.2,0.2,-
+Michigan Expansion,03H,Pouch,NMC,45,0,100,0.2,0.2,-
+Michigan Expansion,04R,Pouch,NMC,25,0,100,1.5,1.5,-
+Michigan Expansion,05C,Pouch,NMC,-5,0,100,1.5,1.5,-
+Michigan Expansion,06H,Pouch,NMC,45,0,100,1.5,1.5,-
+Michigan Expansion,07R,Pouch,NMC,25,0,100,2,2,-
+Michigan Expansion,08C,Pouch,NMC,-5,0,100,2,2,-
+Michigan Expansion,09H,Pouch,NMC,45,0,100,2,2,-
+Michigan Expansion,10R,Pouch,NMC,25,0,100,0.2,1.5,-
+Michigan Expansion,11C,Pouch,NMC,-5,0,100,0.2,1.5,-
+Michigan Expansion,12H,Pouch,NMC,45,0,100,0.2,1.5,-
+Michigan Expansion,13R,Pouch,NMC,25,50,100,0.2,0.2,-
+Michigan Expansion,14C,Pouch,NMC,-5,50,100,0.2,0.2,-
+Michigan Expansion,15H,Pouch,NMC,45,50,100,0.2,0.2,-
+Michigan Expansion,16R,Pouch,NMC,25,50,100,0.2,1.5,-
+Michigan Expansion,17C,Pouch,NMC,-5,50,100,0.2,1.5,-
+Michigan Expansion,18H,Pouch,NMC,45,50,100,0.2,1.5,-
+Michigan Expansion,BLForm10,Pouch,NMC,25,0,100,1,1,j
+Michigan Expansion,BLForm11,Pouch,NMC,25,0,100,1,1,a
+Michigan Expansion,BLForm12,Pouch,NMC,25,0,100,1,1,b
+Michigan Expansion,BLForm13,Pouch,NMC,25,0,100,1,1,c
+Michigan Expansion,BLForm14,Pouch,NMC,25,0,100,1,1,d
+Michigan Expansion,BLForm15,Pouch,NMC,25,0,100,1,1,e
+Michigan Expansion,BLForm16,Pouch,NMC,25,0,100,1,1,f
+Michigan Expansion,BLForm17,Pouch,NMC,25,0,100,1,1,g
+Michigan Expansion,BLForm18,Pouch,NMC,25,0,100,1,1,h
+Michigan Expansion,BLForm19,Pouch,NMC,25,0,100,1,1,i
+Michigan Expansion,BLForm1,Pouch,NMC,45,0,100,1,1,a
+Michigan Expansion,BLForm20,Pouch,NMC,25,0,100,1,1,j
+Michigan Expansion,BLForm2,Pouch,NMC,45,0,100,1,1,b
+Michigan Expansion,BLForm3,Pouch,NMC,45,0,100,1,1,c
+Michigan Expansion,BLForm4,Pouch,NMC,45,0,100,1,1,d
+Michigan Expansion,BLForm5,Pouch,NMC,45,0,100,1,1,e
+Michigan Expansion,BLForm6,Pouch,NMC,45,0,100,1,1,f
+Michigan Expansion,BLForm7,Pouch,NMC,45,0,100,1,1,g
+Michigan Expansion,BLForm8,Pouch,NMC,45,0,100,1,1,h
+Michigan Expansion,BLForm9,Pouch,NMC,45,0,100,1,1,i
+Michigan Expansion,MCForm21,Pouch,NMC,25,0,100,1,1,a
+Michigan Expansion,MCForm22,Pouch,NMC,25,0,100,1,1,b
+Michigan Expansion,MCForm23,Pouch,NMC,25,0,100,1,1,c
+Michigan Expansion,MCForm24,Pouch,NMC,25,0,100,1,1,d
+Michigan Expansion,MCForm25,Pouch,NMC,25,0,100,1,1,e
+Michigan Expansion,MCForm26,Pouch,NMC,25,0,100,1,1,f
+Michigan Expansion,MCForm27,Pouch,NMC,25,0,100,1,1,g
+Michigan Expansion,MCForm28,Pouch,NMC,25,0,100,1,1,h
+Michigan Expansion,MCForm29,Pouch,NMC,25,0,100,1,1,i
+Michigan Expansion,MCForm30,Pouch,NMC,25,0,100,1,1,j
+Michigan Expansion,MCForm31,Pouch,NMC,45,0,100,1,1,a
+Michigan Expansion,MCForm32,Pouch,NMC,45,0,100,1,1,b
+Michigan Expansion,MCForm33,Pouch,NMC,45,0,100,1,1,c
+Michigan Expansion,MCForm34,Pouch,NMC,45,0,100,1,1,d
+Michigan Expansion,MCForm35,Pouch,NMC,45,0,100,1,1,e
+Michigan Expansion,MCForm36,Pouch,NMC,45,0,100,1,1,f
+Michigan Expansion,MCForm37,Pouch,NMC,45,0,100,1,1,g
+Michigan Expansion,MCForm38,Pouch,NMC,45,0,100,1,1,h
+Michigan Expansion,MCForm39,Pouch,NMC,45,0,100,1,1,i
+Michigan Expansion,MCForm40,Pouch,NMC,45,0,100,1,1,j
+Oxford,1-1,Pouch,LCO,40,0,100,2,1.84,a
+Oxford,1-2,Pouch,LCO,40,0,100,2,1.84,b
+Oxford,1-3,Pouch,LCO,40,0,100,2,1.84,c
+Oxford,1-4,Pouch,LCO,40,0,100,2,1.84,d
+Oxford,1-5,Pouch,LCO,40,0,100,2,1.84,e
+Oxford,1-6,Pouch,LCO,40,0,100,2,1.84,f
+Oxford,1-7,Pouch,LCO,40,0,100,2,1.84,g
+Oxford,1-8,Pouch,LCO,40,0,100,2,1.84,h
+SNL,-,18650,LFP,15,0,100,0.5,1,a
+SNL,-,18650,LFP,15,0,100,0.5,1,b
+SNL,-,18650,LFP,15,0,100,0.5,2,a
+SNL,-,18650,LFP,15,0,100,0.5,2,b
+SNL,-,18650,LFP,25,0,100,0.5,0.5,a
+SNL,-,18650,LFP,25,0,100,0.5,1,a
+SNL,-,18650,LFP,25,0,100,0.5,1,b
+SNL,-,18650,LFP,25,0,100,0.5,1,c
+SNL,-,18650,LFP,25,0,100,0.5,1,d
+SNL,-,18650,LFP,25,0,100,0.5,2,a
+SNL,-,18650,LFP,25,0,100,0.5,2,b
+SNL,-,18650,LFP,25,0,100,0.5,3,a
+SNL,-,18650,LFP,25,0,100,0.5,3,b
+SNL,-,18650,LFP,25,0,100,0.5,3,c
+SNL,-,18650,LFP,25,0,100,0.5,3,d
+SNL,-,18650,LFP,25,20,80,0.5,0.5,a
+SNL,-,18650,LFP,25,20,80,0.5,0.5,b
+SNL,-,18650,LFP,25,20,80,0.5,0.5,c
+SNL,-,18650,LFP,25,20,80,0.5,0.5,d
+SNL,-,18650,LFP,25,20,80,0.5,3,a
+SNL,-,18650,LFP,25,40,60,0.5,0.5,a
+SNL,-,18650,LFP,25,40,60,0.5,0.5,b
+SNL,-,18650,LFP,25,40,60,0.5,3,a
+SNL,-,18650,LFP,25,40,60,0.5,3,b
+SNL,-,18650,LFP,35,0,100,0.5,1,a
+SNL,-,18650,LFP,35,0,100,0.5,1,b
+SNL,-,18650,LFP,35,0,100,0.5,1,c
+SNL,-,18650,LFP,35,0,100,0.5,1,d
+SNL,-,18650,LFP,35,0,100,0.5,2,a
+SNL,-,18650,LFP,35,0,100,0.5,2,b
+SNL,-,18650,NCA,15,0,100,0.5,1,a
+SNL,-,18650,NCA,15,0,100,0.5,1,b
+SNL,-,18650,NCA,15,0,100,0.5,2,a
+SNL,-,18650,NCA,15,0,100,0.5,2,b
+SNL,-,18650,NCA,25,0,100,0.5,0.5,a
+SNL,-,18650,NCA,25,0,100,0.5,0.5,b
+SNL,-,18650,NCA,25,0,100,0.5,1,a
+SNL,-,18650,NCA,25,0,100,0.5,1,b
+SNL,-,18650,NCA,25,0,100,0.5,1,c
+SNL,-,18650,NCA,25,0,100,0.5,1,d
+SNL,-,18650,NCA,25,0,100,0.5,2,a
+SNL,-,18650,NCA,25,0,100,0.5,2,b
+SNL,-,18650,NCA,25,20,80,0.5,0.5,a
+SNL,-,18650,NCA,25,20,80,0.5,0.5,b
+SNL,-,18650,NCA,25,20,80,0.5,0.5,c
+SNL,-,18650,NCA,25,20,80,0.5,0.5,d
+SNL,-,18650,NCA,25,40,60,0.5,0.5,a
+SNL,-,18650,NCA,25,40,60,0.5,0.5,b
+SNL,-,18650,NCA,35,0,100,0.5,1,a
+SNL,-,18650,NCA,35,0,100,0.5,1,b
+SNL,-,18650,NCA,35,0,100,0.5,1,c
+SNL,-,18650,NCA,35,0,100,0.5,1,d
+SNL,-,18650,NCA,35,0,100,0.5,2,a
+SNL,-,18650,NCA,35,0,100,0.5,2,b
+SNL,-,18650,NMC,15,0,100,0.5,1,a
+SNL,-,18650,NMC,15,0,100,0.5,1,b
+SNL,-,18650,NMC,15,0,100,0.5,2,a
+SNL,-,18650,NMC,15,0,100,0.5,2,b
+SNL,-,18650,NMC,25,0,100,0.5,0.5,a
+SNL,-,18650,NMC,25,0,100,0.5,0.5,b
+SNL,-,18650,NMC,25,0,100,0.5,1,a
+SNL,-,18650,NMC,25,0,100,0.5,1,b
+SNL,-,18650,NMC,25,0,100,0.5,1,c
+SNL,-,18650,NMC,25,0,100,0.5,1,d
+SNL,-,18650,NMC,25,0,100,0.5,2,a
+SNL,-,18650,NMC,25,0,100,0.5,2,b
+SNL,-,18650,NMC,25,0,100,0.5,3,a
+SNL,-,18650,NMC,25,0,100,0.5,3,b
+SNL,-,18650,NMC,25,0,100,0.5,3,c
+SNL,-,18650,NMC,25,0,100,0.5,3,d
+SNL,-,18650,NMC,25,20,80,0.5,0.5,a
+SNL,-,18650,NMC,25,20,80,0.5,0.5,b
+SNL,-,18650,NMC,25,20,80,0.5,0.5,c
+SNL,-,18650,NMC,25,20,80,0.5,0.5,d
+SNL,-,18650,NMC,25,20,80,0.5,3,a
+SNL,-,18650,NMC,25,20,80,0.5,3,b
+SNL,-,18650,NMC,25,40,60,0.5,0.5,a
+SNL,-,18650,NMC,25,40,60,0.5,0.5,b
+SNL,-,18650,NMC,25,40,60,0.5,3,a
+SNL,-,18650,NMC,25,40,60,0.5,3,b
+SNL,-,18650,NMC,35,0,100,0.5,1,a
+SNL,-,18650,NMC,35,0,100,0.5,1,b
+SNL,-,18650,NMC,35,0,100,0.5,1,c
+SNL,-,18650,NMC,35,0,100,0.5,1,d
+SNL,-,18650,NMC,35,0,100,0.5,2,a
+SNL,-,18650,NMC,35,0,100,0.5,2,b
+UL-PUR,CF10DPA,Pouch,NCA,25,0,100,1,1,n
+UL-PUR,N10-EX9,18650,NCA,23,0,100,0.5,0.5,i
+UL-PUR,N10-NA7,18650,NCA,23,0,100,0.5,0.5,g
+UL-PUR,N10-OV8,18650,NCA,23,0,100,0.5,0.5,h
+UL-PUR,N15-EX4,18650,NCA,23,0,100,0.5,0.5,d
+UL-PUR,N15-NA10,18650,NCA,23,0,100,0.5,0.5,j
+UL-PUR,N15-OV3,18650,NCA,23,0,100,0.5,0.5,c
+UL-PUR,N20-EX2,18650,NCA,23,0,100,0.5,0.5,b
+UL-PUR,N20-NA5,18650,NCA,23,0,100,0.5,0.5,e
+UL-PUR,N20-NA6,18650,NCA,23,0,100,0.5,0.5,f
+UL-PUR,N20-OV1,18650,NCA,23,0,100,0.5,0.5,a
+UL-PUR,R10-EX6,18650,NCA,23,2.5,96.5,0.5,0.5,f
+UL-PUR,R10-NA11,18650,NCA,23,2.5,96.5,0.5,0.5,k
+UL-PUR,R10-OV5,18650,NCA,23,2.5,96.5,0.5,0.5,e
+UL-PUR,R15-EX4,18650,NCA,23,2.5,96.5,0.5,0.5,d
+UL-PUR,R15-NA10,18650,NCA,23,2.5,96.5,0.5,0.5,j
+UL-PUR,R15-OV3,18650,NCA,23,2.5,96.5,0.5,0.5,c
+UL-PUR,R20-EX2,18650,NCA,23,2.5,96.5,0.5,0.5,b
+UL-PUR,R20-NA7,18650,NCA,23,2.5,96.5,0.5,0.5,g
+UL-PUR,R20-NA8,18650,NCA,23,2.5,96.5,0.5,0.5,h
+UL-PUR,R20-NA9,18650,NCA,23,2.5,96.5,0.5,0.5,i
+UL-PUR,R20-OV1,18650,NCA,23,2.5,96.5,0.5,0.5,a
