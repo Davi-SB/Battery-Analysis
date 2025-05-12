@@ -1,3 +1,5 @@
+import pandas as pd
+import numpy as np
 import os
 
 DESCRIPTION_FILE = 'Headers-analysis/headers_description.txt'
@@ -52,6 +54,72 @@ def process_folder(folder_name, base_dir, description_file, name_list_file):
         description_file.write("No cycle_data files found.\n")
         print("No cycle_data files found.")
 
+def parse_filename_components(filename):
+    # Remove extensão .csv antes de splitar
+    name = os.path.splitext(filename)[0]
+    return name.split('_')
+
+def process_filename(dict: dict, components: list):
+    # Processa os componentes do nome do arquivo
+    # Observaçoes:
+    # - HNEI não tem cell id e tem dois form factors
+    # - Michigan pode não ter o 8° componente
+    # - SNL não tem cell id
+    
+    institution_dict = {
+        'CALCE'  : 'Calce',
+        'HNEI'   : 'HNEI',
+        'MICH'   : 'Michigan Expansion',
+        'OX'     : 'Oxford',
+        'SNL'    : 'SNL',
+        'UL-PUR' : 'UL-PUR',
+    }
+    
+    formFactor_dict = {
+        'pouch'  : 'Pouch',
+        'prism': 'Prismatic',
+        '18650'  : '18650',
+        '21700'  : '21700',
+        '26650'  : '26650',
+        '32650'  : '32650',
+        '46800'  : '46800',
+    }
+    
+    components[0] = institution_dict[components[0]] if components[0] in institution_dict else components[0]
+    # components[1] = components[1]
+    components[2] = formFactor_dict[components[2]] if components[2] in formFactor_dict else components[2]    
+    
+    # Alguns nomes de arquivos vem com form factor e cathode trocados
+    if components[3] in ['Pouch', 'pouch', '']:
+        
+    
+def build_dataframe_from_names(name_list_file):    
+    # Cria e define o nome das colunas do DataFrame
+    data_dict = {
+        'Institution'       : [],
+        'Cell ID'           : [],
+        'Group?'            : [],
+        'Form Factor'       : [],
+        'Cathode'           : [],
+        'Temperature (°C)'  : [],
+        'Min SOC (%)'       : [],
+        'Max SOC (%)'       : [],
+        'Charge Rate (C)'   : [],
+        'Discharge Rate (C)': []
+    }
+    
+    data = []
+    with open(name_list_file, 'r', encoding='utf-8') as f:
+        for line in f:
+            filename = line.strip()
+            if not filename: continue
+            components = parse_filename_components(filename)
+            data_dict = process_filename(data_dict, components)
+
+    df = pd.DataFrame(data_dict)
+    df = df.replace('', np.nan)  # Substitui strings vazias por NaN
+    return df
+
 if __name__ == '__main__':
     # Garante que a pasta de saída existe
     if not os.path.exists('Headers-analysis'):
@@ -65,3 +133,6 @@ if __name__ == '__main__':
         subfolders = get_subfolders(BASE_DIR)
         for folder in subfolders:
             process_folder(folder, BASE_DIR, desc, NAME_LIST_FILE)
+            
+    df = build_dataframe_from_names(NAME_LIST_FILE)
+    #df.to_csv('Headers-analysis/headers.csv', index=False, encoding='utf-8')
