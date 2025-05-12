@@ -1,0 +1,2 @@
+- Olhar apenas para casos de descarga com corrente constante
+- Dentro de uma mesma pasta, as células iguais sob condições iguais podem estar inclusas no mesmo array de NCD1%, mas lembrar do sort
