@@ -2,11 +2,6 @@ import json
 import pandas as pd
 from collections import defaultdict
 
-def json_dump(obj, fp, ensure_ascii=False, indent=4):
-    converted_dict = { str(k): list(v) for k, v in obj.items() }
-    json_string = json.dumps(converted_dict, ensure_ascii=ensure_ascii, indent=indent)
-    fp.write(json_string)
-
 # Removed: 'Institution','Cell ID','Temperature (°C)','Group'
 matchingFeatures = ['Form Factor','Cathode','Min SOC (%)','Max SOC (%)','Charge Rate (C)','Discharge Rate (C)']
 df = pd.read_csv('filenames.csv')
@@ -23,12 +18,14 @@ for idx, row in df.iterrows():
     # Adiciona o índice da linha à lista correspondente
     groups_dict[key].append(row['Full Filename'])
 
+converted_dict = defaultdict(list)
 for key, values in groups_dict.items():
     print(f"Chave <{key}>\t Tem {len(values)} em comum")
+    converted_dict[str(key)] = (list(values))
 
-# Abre (ou cria) o arquivo em modo escrita e serializa o dicionário em JSON
-json_dump(
-    obj=groups_dict,
+# Salva em JSON
+json.dump(
+    obj=converted_dict,
     fp=open('groups.json', 'w', encoding='utf-8'),
     ensure_ascii=False,
     indent=4
