@@ -1,197 +1,197 @@
-Institution,Cell ID,Form Factor,Cathode,Temperature (°C),Min SOC (%),Max SOC (%),Charge Rate (C),Discharge Rate (C),Group
-Calce,CX2-16,Prismatic,LCO,25,0,100,0.5,0.5,a
-Calce,CX2-25,Prismatic,LCO,25,0,100,0.5,0.5,b
-Calce,CX2-33,Prismatic,LCO,25,0,100,0.5,0.5,d
-Calce,CX2-34,Prismatic,LCO,25,0,100,0.5,0.5,e
-Calce,CX2-36,Prismatic,LCO,25,0,100,0.5,0.5,f
-Calce,CX2-37,Prismatic,LCO,25,0,100,0.5,0.5,g
-Calce,CX2-38,Prismatic,LCO,25,0,100,0.5,0.5,h
-HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,a
-HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,b
-HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,c
-HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,d
-HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,e
-HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,f
-HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,g
-HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,j
-HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,l
-HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,m
-HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,n
-HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,o
-HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,p
-HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,s
-HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,t
-Michigan Expansion,01R,Pouch,NMC,25,0,100,0.2,0.2,-
-Michigan Expansion,02C,Pouch,NMC,-5,0,100,0.2,0.2,-
-Michigan Expansion,03H,Pouch,NMC,45,0,100,0.2,0.2,-
-Michigan Expansion,04R,Pouch,NMC,25,0,100,1.5,1.5,-
-Michigan Expansion,05C,Pouch,NMC,-5,0,100,1.5,1.5,-
-Michigan Expansion,06H,Pouch,NMC,45,0,100,1.5,1.5,-
-Michigan Expansion,07R,Pouch,NMC,25,0,100,2,2,-
-Michigan Expansion,08C,Pouch,NMC,-5,0,100,2,2,-
-Michigan Expansion,09H,Pouch,NMC,45,0,100,2,2,-
-Michigan Expansion,10R,Pouch,NMC,25,0,100,0.2,1.5,-
-Michigan Expansion,11C,Pouch,NMC,-5,0,100,0.2,1.5,-
-Michigan Expansion,12H,Pouch,NMC,45,0,100,0.2,1.5,-
-Michigan Expansion,13R,Pouch,NMC,25,50,100,0.2,0.2,-
-Michigan Expansion,14C,Pouch,NMC,-5,50,100,0.2,0.2,-
-Michigan Expansion,15H,Pouch,NMC,45,50,100,0.2,0.2,-
-Michigan Expansion,16R,Pouch,NMC,25,50,100,0.2,1.5,-
-Michigan Expansion,17C,Pouch,NMC,-5,50,100,0.2,1.5,-
-Michigan Expansion,18H,Pouch,NMC,45,50,100,0.2,1.5,-
-Michigan Expansion,BLForm10,Pouch,NMC,25,0,100,1,1,j
-Michigan Expansion,BLForm11,Pouch,NMC,25,0,100,1,1,a
-Michigan Expansion,BLForm12,Pouch,NMC,25,0,100,1,1,b
-Michigan Expansion,BLForm13,Pouch,NMC,25,0,100,1,1,c
-Michigan Expansion,BLForm14,Pouch,NMC,25,0,100,1,1,d
-Michigan Expansion,BLForm15,Pouch,NMC,25,0,100,1,1,e
-Michigan Expansion,BLForm16,Pouch,NMC,25,0,100,1,1,f
-Michigan Expansion,BLForm17,Pouch,NMC,25,0,100,1,1,g
-Michigan Expansion,BLForm18,Pouch,NMC,25,0,100,1,1,h
-Michigan Expansion,BLForm19,Pouch,NMC,25,0,100,1,1,i
-Michigan Expansion,BLForm1,Pouch,NMC,45,0,100,1,1,a
-Michigan Expansion,BLForm20,Pouch,NMC,25,0,100,1,1,j
-Michigan Expansion,BLForm2,Pouch,NMC,45,0,100,1,1,b
-Michigan Expansion,BLForm3,Pouch,NMC,45,0,100,1,1,c
-Michigan Expansion,BLForm4,Pouch,NMC,45,0,100,1,1,d
-Michigan Expansion,BLForm5,Pouch,NMC,45,0,100,1,1,e
-Michigan Expansion,BLForm6,Pouch,NMC,45,0,100,1,1,f
-Michigan Expansion,BLForm7,Pouch,NMC,45,0,100,1,1,g
-Michigan Expansion,BLForm8,Pouch,NMC,45,0,100,1,1,h
-Michigan Expansion,BLForm9,Pouch,NMC,45,0,100,1,1,i
-Michigan Expansion,MCForm21,Pouch,NMC,25,0,100,1,1,a
-Michigan Expansion,MCForm22,Pouch,NMC,25,0,100,1,1,b
-Michigan Expansion,MCForm23,Pouch,NMC,25,0,100,1,1,c
-Michigan Expansion,MCForm24,Pouch,NMC,25,0,100,1,1,d
-Michigan Expansion,MCForm25,Pouch,NMC,25,0,100,1,1,e
-Michigan Expansion,MCForm26,Pouch,NMC,25,0,100,1,1,f
-Michigan Expansion,MCForm27,Pouch,NMC,25,0,100,1,1,g
-Michigan Expansion,MCForm28,Pouch,NMC,25,0,100,1,1,h
-Michigan Expansion,MCForm29,Pouch,NMC,25,0,100,1,1,i
-Michigan Expansion,MCForm30,Pouch,NMC,25,0,100,1,1,j
-Michigan Expansion,MCForm31,Pouch,NMC,45,0,100,1,1,a
-Michigan Expansion,MCForm32,Pouch,NMC,45,0,100,1,1,b
-Michigan Expansion,MCForm33,Pouch,NMC,45,0,100,1,1,c
-Michigan Expansion,MCForm34,Pouch,NMC,45,0,100,1,1,d
-Michigan Expansion,MCForm35,Pouch,NMC,45,0,100,1,1,e
-Michigan Expansion,MCForm36,Pouch,NMC,45,0,100,1,1,f
-Michigan Expansion,MCForm37,Pouch,NMC,45,0,100,1,1,g
-Michigan Expansion,MCForm38,Pouch,NMC,45,0,100,1,1,h
-Michigan Expansion,MCForm39,Pouch,NMC,45,0,100,1,1,i
-Michigan Expansion,MCForm40,Pouch,NMC,45,0,100,1,1,j
-Oxford,1-1,Pouch,LCO,40,0,100,2,1.84,a
-Oxford,1-2,Pouch,LCO,40,0,100,2,1.84,b
-Oxford,1-3,Pouch,LCO,40,0,100,2,1.84,c
-Oxford,1-4,Pouch,LCO,40,0,100,2,1.84,d
-Oxford,1-5,Pouch,LCO,40,0,100,2,1.84,e
-Oxford,1-6,Pouch,LCO,40,0,100,2,1.84,f
-Oxford,1-7,Pouch,LCO,40,0,100,2,1.84,g
-Oxford,1-8,Pouch,LCO,40,0,100,2,1.84,h
-SNL,-,18650,LFP,15,0,100,0.5,1,a
-SNL,-,18650,LFP,15,0,100,0.5,1,b
-SNL,-,18650,LFP,15,0,100,0.5,2,a
-SNL,-,18650,LFP,15,0,100,0.5,2,b
-SNL,-,18650,LFP,25,0,100,0.5,0.5,a
-SNL,-,18650,LFP,25,0,100,0.5,1,a
-SNL,-,18650,LFP,25,0,100,0.5,1,b
-SNL,-,18650,LFP,25,0,100,0.5,1,c
-SNL,-,18650,LFP,25,0,100,0.5,1,d
-SNL,-,18650,LFP,25,0,100,0.5,2,a
-SNL,-,18650,LFP,25,0,100,0.5,2,b
-SNL,-,18650,LFP,25,0,100,0.5,3,a
-SNL,-,18650,LFP,25,0,100,0.5,3,b
-SNL,-,18650,LFP,25,0,100,0.5,3,c
-SNL,-,18650,LFP,25,0,100,0.5,3,d
-SNL,-,18650,LFP,25,20,80,0.5,0.5,a
-SNL,-,18650,LFP,25,20,80,0.5,0.5,b
-SNL,-,18650,LFP,25,20,80,0.5,0.5,c
-SNL,-,18650,LFP,25,20,80,0.5,0.5,d
-SNL,-,18650,LFP,25,20,80,0.5,3,a
-SNL,-,18650,LFP,25,40,60,0.5,0.5,a
-SNL,-,18650,LFP,25,40,60,0.5,0.5,b
-SNL,-,18650,LFP,25,40,60,0.5,3,a
-SNL,-,18650,LFP,25,40,60,0.5,3,b
-SNL,-,18650,LFP,35,0,100,0.5,1,a
-SNL,-,18650,LFP,35,0,100,0.5,1,b
-SNL,-,18650,LFP,35,0,100,0.5,1,c
-SNL,-,18650,LFP,35,0,100,0.5,1,d
-SNL,-,18650,LFP,35,0,100,0.5,2,a
-SNL,-,18650,LFP,35,0,100,0.5,2,b
-SNL,-,18650,NCA,15,0,100,0.5,1,a
-SNL,-,18650,NCA,15,0,100,0.5,1,b
-SNL,-,18650,NCA,15,0,100,0.5,2,a
-SNL,-,18650,NCA,15,0,100,0.5,2,b
-SNL,-,18650,NCA,25,0,100,0.5,0.5,a
-SNL,-,18650,NCA,25,0,100,0.5,0.5,b
-SNL,-,18650,NCA,25,0,100,0.5,1,a
-SNL,-,18650,NCA,25,0,100,0.5,1,b
-SNL,-,18650,NCA,25,0,100,0.5,1,c
-SNL,-,18650,NCA,25,0,100,0.5,1,d
-SNL,-,18650,NCA,25,0,100,0.5,2,a
-SNL,-,18650,NCA,25,0,100,0.5,2,b
-SNL,-,18650,NCA,25,20,80,0.5,0.5,a
-SNL,-,18650,NCA,25,20,80,0.5,0.5,b
-SNL,-,18650,NCA,25,20,80,0.5,0.5,c
-SNL,-,18650,NCA,25,20,80,0.5,0.5,d
-SNL,-,18650,NCA,25,40,60,0.5,0.5,a
-SNL,-,18650,NCA,25,40,60,0.5,0.5,b
-SNL,-,18650,NCA,35,0,100,0.5,1,a
-SNL,-,18650,NCA,35,0,100,0.5,1,b
-SNL,-,18650,NCA,35,0,100,0.5,1,c
-SNL,-,18650,NCA,35,0,100,0.5,1,d
-SNL,-,18650,NCA,35,0,100,0.5,2,a
-SNL,-,18650,NCA,35,0,100,0.5,2,b
-SNL,-,18650,NMC,15,0,100,0.5,1,a
-SNL,-,18650,NMC,15,0,100,0.5,1,b
-SNL,-,18650,NMC,15,0,100,0.5,2,a
-SNL,-,18650,NMC,15,0,100,0.5,2,b
-SNL,-,18650,NMC,25,0,100,0.5,0.5,a
-SNL,-,18650,NMC,25,0,100,0.5,0.5,b
-SNL,-,18650,NMC,25,0,100,0.5,1,a
-SNL,-,18650,NMC,25,0,100,0.5,1,b
-SNL,-,18650,NMC,25,0,100,0.5,1,c
-SNL,-,18650,NMC,25,0,100,0.5,1,d
-SNL,-,18650,NMC,25,0,100,0.5,2,a
-SNL,-,18650,NMC,25,0,100,0.5,2,b
-SNL,-,18650,NMC,25,0,100,0.5,3,a
-SNL,-,18650,NMC,25,0,100,0.5,3,b
-SNL,-,18650,NMC,25,0,100,0.5,3,c
-SNL,-,18650,NMC,25,0,100,0.5,3,d
-SNL,-,18650,NMC,25,20,80,0.5,0.5,a
-SNL,-,18650,NMC,25,20,80,0.5,0.5,b
-SNL,-,18650,NMC,25,20,80,0.5,0.5,c
-SNL,-,18650,NMC,25,20,80,0.5,0.5,d
-SNL,-,18650,NMC,25,20,80,0.5,3,a
-SNL,-,18650,NMC,25,20,80,0.5,3,b
-SNL,-,18650,NMC,25,40,60,0.5,0.5,a
-SNL,-,18650,NMC,25,40,60,0.5,0.5,b
-SNL,-,18650,NMC,25,40,60,0.5,3,a
-SNL,-,18650,NMC,25,40,60,0.5,3,b
-SNL,-,18650,NMC,35,0,100,0.5,1,a
-SNL,-,18650,NMC,35,0,100,0.5,1,b
-SNL,-,18650,NMC,35,0,100,0.5,1,c
-SNL,-,18650,NMC,35,0,100,0.5,1,d
-SNL,-,18650,NMC,35,0,100,0.5,2,a
-SNL,-,18650,NMC,35,0,100,0.5,2,b
-UL-PUR,CF10DPA,Pouch,NCA,25,0,100,1,1,n
-UL-PUR,N10-EX9,18650,NCA,23,0,100,0.5,0.5,i
-UL-PUR,N10-NA7,18650,NCA,23,0,100,0.5,0.5,g
-UL-PUR,N10-OV8,18650,NCA,23,0,100,0.5,0.5,h
-UL-PUR,N15-EX4,18650,NCA,23,0,100,0.5,0.5,d
-UL-PUR,N15-NA10,18650,NCA,23,0,100,0.5,0.5,j
-UL-PUR,N15-OV3,18650,NCA,23,0,100,0.5,0.5,c
-UL-PUR,N20-EX2,18650,NCA,23,0,100,0.5,0.5,b
-UL-PUR,N20-NA5,18650,NCA,23,0,100,0.5,0.5,e
-UL-PUR,N20-NA6,18650,NCA,23,0,100,0.5,0.5,f
-UL-PUR,N20-OV1,18650,NCA,23,0,100,0.5,0.5,a
-UL-PUR,R10-EX6,18650,NCA,23,2.5,96.5,0.5,0.5,f
-UL-PUR,R10-NA11,18650,NCA,23,2.5,96.5,0.5,0.5,k
-UL-PUR,R10-OV5,18650,NCA,23,2.5,96.5,0.5,0.5,e
-UL-PUR,R15-EX4,18650,NCA,23,2.5,96.5,0.5,0.5,d
-UL-PUR,R15-NA10,18650,NCA,23,2.5,96.5,0.5,0.5,j
-UL-PUR,R15-OV3,18650,NCA,23,2.5,96.5,0.5,0.5,c
-UL-PUR,R20-EX2,18650,NCA,23,2.5,96.5,0.5,0.5,b
-UL-PUR,R20-NA7,18650,NCA,23,2.5,96.5,0.5,0.5,g
-UL-PUR,R20-NA8,18650,NCA,23,2.5,96.5,0.5,0.5,h
-UL-PUR,R20-NA9,18650,NCA,23,2.5,96.5,0.5,0.5,i
-UL-PUR,R20-OV1,18650,NCA,23,2.5,96.5,0.5,0.5,a
+Institution,Cell ID,Form Factor,Cathode,Temperature (°C),Min SOC (%),Max SOC (%),Charge Rate (C),Discharge Rate (C),Group,Full Filename
+SNL,-,18650,NMC,15,0,100,0.5,1,b,SNL_18650_NMC_15C_0-100_0.5-1C_b_timeseries.csv
+SNL,-,18650,NMC,25,40,60,0.5,3,b,SNL_18650_NMC_25C_40-60_0.5-3C_b_timeseries.csv
+SNL,-,18650,NMC,25,40,60,0.5,3,a,SNL_18650_NMC_25C_40-60_0.5-3C_a_timeseries.csv
+SNL,-,18650,NMC,15,0,100,0.5,2,b,SNL_18650_NMC_15C_0-100_0.5-2C_b_timeseries.csv
+SNL,-,18650,NMC,35,0,100,0.5,2,b,SNL_18650_NMC_35C_0-100_0.5-2C_b_timeseries.csv
+SNL,-,18650,NMC,25,0,100,0.5,1,a,SNL_18650_NMC_25C_0-100_0.5-1C_a_timeseries.csv
+SNL,-,18650,NMC,35,0,100,0.5,1,b,SNL_18650_NMC_35C_0-100_0.5-1C_b_timeseries.csv
+SNL,-,18650,NMC,25,20,80,0.5,0.5,b,SNL_18650_NMC_25C_20-80_0.5-0.5C_b_timeseries.csv
+SNL,-,18650,NMC,25,0,100,0.5,1,d,SNL_18650_NMC_25C_0-100_0.5-1C_d_timeseries.csv
+SNL,-,18650,NMC,15,0,100,0.5,2,a,SNL_18650_NMC_15C_0-100_0.5-2C_a_timeseries.csv
+SNL,-,18650,NMC,25,0,100,0.5,0.5,a,SNL_18650_NMC_25C_0-100_0.5-0.5C_a_timeseries.csv
+SNL,-,18650,NMC,25,20,80,0.5,0.5,a,SNL_18650_NMC_25C_20-80_0.5-0.5C_a_timeseries.csv
+SNL,-,18650,NMC,25,0,100,0.5,1,c,SNL_18650_NMC_25C_0-100_0.5-1C_c_timeseries.csv
+SNL,-,18650,NMC,35,0,100,0.5,1,c,SNL_18650_NMC_35C_0-100_0.5-1C_c_timeseries.csv
+SNL,-,18650,NMC,25,0,100,0.5,3,b,SNL_18650_NMC_25C_0-100_0.5-3C_b_timeseries.csv
+SNL,-,18650,NMC,25,0,100,0.5,2,b,SNL_18650_NMC_25C_0-100_0.5-2C_b_timeseries.csv
+SNL,-,18650,NMC,25,40,60,0.5,0.5,b,SNL_18650_NMC_25C_40-60_0.5-0.5C_b_timeseries.csv
+SNL,-,18650,NMC,25,0,100,0.5,3,d,SNL_18650_NMC_25C_0-100_0.5-3C_d_timeseries.csv
+SNL,-,18650,NMC,25,40,60,0.5,0.5,a,SNL_18650_NMC_25C_40-60_0.5-0.5C_a_timeseries.csv
+SNL,-,18650,NMC,25,20,80,0.5,0.5,c,SNL_18650_NMC_25C_20-80_0.5-0.5C_c_timeseries.csv
+SNL,-,18650,NMC,35,0,100,0.5,1,a,SNL_18650_NMC_35C_0-100_0.5-1C_a_timeseries.csv
+SNL,-,18650,NMC,25,0,100,0.5,1,b,SNL_18650_NMC_25C_0-100_0.5-1C_b_timeseries.csv
+SNL,-,18650,NMC,25,0,100,0.5,3,a,SNL_18650_NMC_25C_0-100_0.5-3C_a_timeseries.csv
+SNL,-,18650,NMC,15,0,100,0.5,1,a,SNL_18650_NMC_15C_0-100_0.5-1C_a_timeseries.csv
+SNL,-,18650,NMC,25,0,100,0.5,2,a,SNL_18650_NMC_25C_0-100_0.5-2C_a_timeseries.csv
+SNL,-,18650,NMC,35,0,100,0.5,1,d,SNL_18650_NMC_35C_0-100_0.5-1C_d_timeseries.csv
+SNL,-,18650,NMC,25,20,80,0.5,3,b,SNL_18650_NMC_25C_20-80_0.5-3C_b_timeseries.csv
+SNL,-,18650,NMC,35,0,100,0.5,2,a,SNL_18650_NMC_35C_0-100_0.5-2C_a_timeseries.csv
+SNL,-,18650,NMC,25,20,80,0.5,0.5,d,SNL_18650_NMC_25C_20-80_0.5-0.5C_d_timeseries.csv
+SNL,-,18650,NMC,25,20,80,0.5,3,a,SNL_18650_NMC_25C_20-80_0.5-3C_a_timeseries.csv
+SNL,-,18650,NMC,25,0,100,0.5,0.5,b,SNL_18650_NMC_25C_0-100_0.5-0.5C_b_timeseries.csv
+SNL,-,18650,NMC,25,0,100,0.5,3,c,SNL_18650_NMC_25C_0-100_0.5-3C_c_timeseries.csv
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,e,HNEI_18650_NMC_LCO_25C_0-100_0.5-1.5C_e_timeseries.csv
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,g,HNEI_18650_NMC_LCO_25C_0-100_0.5-1.5C_g_timeseries.csv
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,c,HNEI_18650_NMC_LCO_25C_0-100_0.5-1.5C_c_timeseries.csv
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,p,HNEI_18650_NMC_LCO_25C_0-100_0.5-1.5C_p_timeseries.csv
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,l,HNEI_18650_NMC_LCO_25C_0-100_0.5-1.5C_l_timeseries.csv
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,d,HNEI_18650_NMC_LCO_25C_0-100_0.5-1.5C_d_timeseries.csv
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,b,HNEI_18650_NMC_LCO_25C_0-100_0.5-1.5C_b_timeseries.csv
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,j,HNEI_18650_NMC_LCO_25C_0-100_0.5-1.5C_j_timeseries.csv
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,a,HNEI_18650_NMC_LCO_25C_0-100_0.5-1.5C_a_timeseries.csv
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,n,HNEI_18650_NMC_LCO_25C_0-100_0.5-1.5C_n_timeseries.csv
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,o,HNEI_18650_NMC_LCO_25C_0-100_0.5-1.5C_o_timeseries.csv
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,t,HNEI_18650_NMC_LCO_25C_0-100_0.5-1.5C_t_timeseries.csv
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,s,HNEI_18650_NMC_LCO_25C_0-100_0.5-1.5C_s_timeseries.csv
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,m,HNEI_18650_NMC_LCO_25C_0-100_0.5-1.5C_m_timeseries.csv
+HNEI,-,18650,NMC-LCO,25,0,100,0.5,1.5,f,HNEI_18650_NMC_LCO_25C_0-100_0.5-1.5C_f_timeseries.csv
+UL-PUR,R15-EX4,18650,NCA,23,2.5,96.5,0.5,0.5,d,UL-PUR_R15-EX4_18650_NCA_23C_2.5-96.5_0.5-0.5C_d_timeseries.csv
+UL-PUR,R20-NA9,18650,NCA,23,2.5,96.5,0.5,0.5,i,UL-PUR_R20-NA9_18650_NCA_23C_2.5-96.5_0.5-0.5C_i_timeseries.csv
+UL-PUR,N20-NA6,18650,NCA,23,0,100,0.5,0.5,f,UL-PUR_N20-NA6_18650_NCA_23C_0-100_0.5-0.5C_f_timeseries.csv
+UL-PUR,R10-NA11,18650,NCA,23,2.5,96.5,0.5,0.5,k,UL-PUR_R10-NA11_18650_NCA_23C_2.5-96.5_0.5-0.5C_k_timeseries.csv
+UL-PUR,N15-OV3,18650,NCA,23,0,100,0.5,0.5,c,UL-PUR_N15-OV3_18650_NCA_23C_0-100_0.5-0.5C_c_timeseries.csv
+UL-PUR,R10-EX6,18650,NCA,23,2.5,96.5,0.5,0.5,f,UL-PUR_R10-EX6_18650_NCA_23C_2.5-96.5_0.5-0.5C_f_timeseries.csv
+UL-PUR,N20-OV1,18650,NCA,23,0,100,0.5,0.5,a,UL-PUR_N20-OV1_18650_NCA_23C_0-100_0.5-0.5C_a_timeseries.csv
+UL-PUR,N10-NA7,18650,NCA,23,0,100,0.5,0.5,g,UL-PUR_N10-NA7_18650_NCA_23C_0-100_0.5-0.5C_g_timeseries.csv
+UL-PUR,N10-EX9,18650,NCA,23,0,100,0.5,0.5,i,UL-PUR_N10-EX9_18650_NCA_23C_0-100_0.5-0.5C_i_timeseries.csv
+UL-PUR,R20-EX2,18650,NCA,23,2.5,96.5,0.5,0.5,b,UL-PUR_R20-EX2_18650_NCA_23C_2.5-96.5_0.5-0.5C_b_timeseries.csv
+UL-PUR,N15-NA10,18650,NCA,23,0,100,0.5,0.5,j,UL-PUR_N15-NA10_18650_NCA_23C_0-100_0.5-0.5C_j_timeseries.csv
+UL-PUR,R20-NA7,18650,NCA,23,2.5,96.5,0.5,0.5,g,UL-PUR_R20-NA7_18650_NCA_23C_2.5-96.5_0.5-0.5C_g_timeseries.csv
+UL-PUR,R15-NA10,18650,NCA,23,2.5,96.5,0.5,0.5,j,UL-PUR_R15-NA10_18650_NCA_23C_2.5-96.5_0.5-0.5C_j_timeseries.csv
+UL-PUR,R15-OV3,18650,NCA,23,2.5,96.5,0.5,0.5,c,UL-PUR_R15-OV3_18650_NCA_23C_2.5-96.5_0.5-0.5C_c_timeseries.csv
+UL-PUR,N10-OV8,18650,NCA,23,0,100,0.5,0.5,h,UL-PUR_N10-OV8_18650_NCA_23C_0-100_0.5-0.5C_h_timeseries.csv
+UL-PUR,R10-OV5,18650,NCA,23,2.5,96.5,0.5,0.5,e,UL-PUR_R10-OV5_18650_NCA_23C_2.5-96.5_0.5-0.5C_e_timeseries.csv
+UL-PUR,CF10DPA,Pouch,NCA,25,0,100,1,1,n,UL-PUR_CF10DPA_pouch_NCA_25C_0-100_1-1C_n_timeseries_data.csv
+UL-PUR,R20-NA8,18650,NCA,23,2.5,96.5,0.5,0.5,h,UL-PUR_R20-NA8_18650_NCA_23C_2.5-96.5_0.5-0.5C_h_timeseries.csv
+UL-PUR,N20-EX2,18650,NCA,23,0,100,0.5,0.5,b,UL-PUR_N20-EX2_18650_NCA_23C_0-100_0.5-0.5C_b_timeseries.csv
+UL-PUR,R20-OV1,18650,NCA,23,2.5,96.5,0.5,0.5,a,UL-PUR_R20-OV1_18650_NCA_23C_2.5-96.5_0.5-0.5C_a_timeseries.csv
+UL-PUR,N15-EX4,18650,NCA,23,0,100,0.5,0.5,d,UL-PUR_N15-EX4_18650_NCA_23C_0-100_0.5-0.5C_d_timeseries.csv
+UL-PUR,N20-NA5,18650,NCA,23,0,100,0.5,0.5,e,UL-PUR_N20-NA5_18650_NCA_23C_0-100_0.5-0.5C_e_timeseries.csv
+SNL,-,18650,NCA,15,0,100,0.5,2,a,SNL_18650_NCA_15C_0-100_0.5-2C_a_timeseries.csv
+SNL,-,18650,NCA,25,0,100,0.5,1,c,SNL_18650_NCA_25C_0-100_0.5-1C_c_timeseries.csv
+SNL,-,18650,NCA,35,0,100,0.5,1,c,SNL_18650_NCA_35C_0-100_0.5-1C_c_timeseries.csv
+SNL,-,18650,NCA,25,0,100,0.5,2,a,SNL_18650_NCA_25C_0-100_0.5-2C_a_timeseries.csv
+SNL,-,18650,NCA,25,40,60,0.5,0.5,b,SNL_18650_NCA_25C_40-60_0.5-0.5C_b_timeseries.csv
+SNL,-,18650,NCA,35,0,100,0.5,2,b,SNL_18650_NCA_35C_0-100_0.5-2C_b_timeseries.csv
+SNL,-,18650,NCA,25,0,100,0.5,2,b,SNL_18650_NCA_25C_0-100_0.5-2C_b_timeseries.csv
+SNL,-,18650,NCA,25,20,80,0.5,0.5,c,SNL_18650_NCA_25C_20-80_0.5-0.5C_c_timeseries.csv
+SNL,-,18650,NCA,25,0,100,0.5,0.5,b,SNL_18650_NCA_25C_0-100_0.5-0.5C_b_timeseries.csv
+SNL,-,18650,NCA,25,20,80,0.5,0.5,b,SNL_18650_NCA_25C_20-80_0.5-0.5C_b_timeseries.csv
+SNL,-,18650,NCA,25,0,100,0.5,1,a,SNL_18650_NCA_25C_0-100_0.5-1C_a_timeseries.csv
+SNL,-,18650,NCA,35,0,100,0.5,1,b,SNL_18650_NCA_35C_0-100_0.5-1C_b_timeseries.csv
+SNL,-,18650,NCA,25,0,100,0.5,1,b,SNL_18650_NCA_25C_0-100_0.5-1C_b_timeseries.csv
+SNL,-,18650,NCA,35,0,100,0.5,1,d,SNL_18650_NCA_35C_0-100_0.5-1C_d_timeseries.csv
+SNL,-,18650,NCA,35,0,100,0.5,1,a,SNL_18650_NCA_35C_0-100_0.5-1C_a_timeseries.csv
+SNL,-,18650,NCA,25,20,80,0.5,0.5,a,SNL_18650_NCA_25C_20-80_0.5-0.5C_a_timeseries.csv
+SNL,-,18650,NCA,25,0,100,0.5,0.5,a,SNL_18650_NCA_25C_0-100_0.5-0.5C_a_timeseries.csv
+SNL,-,18650,NCA,15,0,100,0.5,2,b,SNL_18650_NCA_15C_0-100_0.5-2C_b_timeseries.csv
+SNL,-,18650,NCA,15,0,100,0.5,1,a,SNL_18650_NCA_15C_0-100_0.5-1C_a_timeseries.csv
+SNL,-,18650,NCA,25,40,60,0.5,0.5,a,SNL_18650_NCA_25C_40-60_0.5-0.5C_a_timeseries.csv
+SNL,-,18650,NCA,15,0,100,0.5,1,b,SNL_18650_NCA_15C_0-100_0.5-1C_b_timeseries.csv
+SNL,-,18650,NCA,25,20,80,0.5,0.5,d,SNL_18650_NCA_25C_20-80_0.5-0.5C_d_timeseries.csv
+SNL,-,18650,NCA,35,0,100,0.5,2,a,SNL_18650_NCA_35C_0-100_0.5-2C_a_timeseries.csv
+SNL,-,18650,NCA,25,0,100,0.5,1,d,SNL_18650_NCA_25C_0-100_0.5-1C_d_timeseries.csv
+Oxford,1-1,Pouch,LCO,40,0,100,2,1.84,a,OX_1-1_pouch_LCO_40C_0-100_2-1.84C_a_timeseries.csv
+Oxford,1-4,Pouch,LCO,40,0,100,2,1.84,d,OX_1-4_pouch_LCO_40C_0-100_2-1.84C_d_timeseries.csv
+Oxford,1-5,Pouch,LCO,40,0,100,2,1.84,e,OX_1-5_pouch_LCO_40C_0-100_2-1.84C_e_timeseries.csv
+Oxford,1-7,Pouch,LCO,40,0,100,2,1.84,g,OX_1-7_pouch_LCO_40C_0-100_2-1.84C_g_timeseries.csv
+Oxford,1-2,Pouch,LCO,40,0,100,2,1.84,b,OX_1-2_pouch_LCO_40C_0-100_2-1.84C_b_timeseries.csv
+Oxford,1-6,Pouch,LCO,40,0,100,2,1.84,f,OX_1-6_pouch_LCO_40C_0-100_2-1.84C_f_timeseries.csv
+Oxford,1-3,Pouch,LCO,40,0,100,2,1.84,c,OX_1-3_pouch_LCO_40C_0-100_2-1.84C_c_timeseries.csv
+Oxford,1-8,Pouch,LCO,40,0,100,2,1.84,h,OX_1-8_pouch_LCO_40C_0-100_2-1.84C_h_timeseries.csv
+Calce,CX2-25,Prismatic,LCO,25,0,100,0.5,0.5,b,CALCE_CX2-25_prism_LCO_25C_0-100_0.5-0.5C_b_timeseries.csv
+Calce,CX2-37,Prismatic,LCO,25,0,100,0.5,0.5,g,CALCE_CX2-37_prism_LCO_25C_0-100_0.5-0.5C_g_timeseries.csv
+Calce,CX2-38,Prismatic,LCO,25,0,100,0.5,0.5,h,CALCE_CX2-38_prism_LCO_25C_0-100_0.5-0.5C_h_timeseries.csv
+Calce,CX2-34,Prismatic,LCO,25,0,100,0.5,0.5,e,CALCE_CX2-34_prism_LCO_25C_0-100_0.5-0.5C_e_timeseries.csv
+Calce,CX2-33,Prismatic,LCO,25,0,100,0.5,0.5,d,CALCE_CX2-33_prism_LCO_25C_0-100_0.5-0.5C_d_timeseries.csv
+Calce,CX2-36,Prismatic,LCO,25,0,100,0.5,0.5,f,CALCE_CX2-36_prism_LCO_25C_0-100_0.5-0.5C_f_timeseries.csv
+Calce,CX2-16,Prismatic,LCO,25,0,100,0.5,0.5,a,CALCE_CX2-16_prism_LCO_25C_0-100_0.5-0.5C_a_timeseries.csv
+Michigan Expansion,04R,Pouch,NMC,25,0,100,1.5,1.5,-,MICH_04R_pouch_NMC_25C_0-100_1.5-1.5C_timeseries_data.csv
+Michigan Expansion,16R,Pouch,NMC,25,50,100,0.2,1.5,-,MICH_16R_pouch_NMC_25C_50-100_0.2-1.5C_timeseries_data.csv
+Michigan Expansion,18H,Pouch,NMC,45,50,100,0.2,1.5,-,MICH_18H_pouch_NMC_45C_50-100_0.2-1.5C_timeseries_data.csv
+Michigan Expansion,02C,Pouch,NMC,-5,0,100,0.2,0.2,-,MICH_02C_pouch_NMC_-5C_0-100_0.2-0.2C_timeseries_data.csv
+Michigan Expansion,13R,Pouch,NMC,25,50,100,0.2,0.2,-,MICH_13R_pouch_NMC_25C_50-100_0.2-0.2C_timeseries_data.csv
+Michigan Expansion,06H,Pouch,NMC,45,0,100,1.5,1.5,-,MICH_06H_pouch_NMC_45C_0-100_1.5-1.5C_timeseries_data.csv
+Michigan Expansion,15H,Pouch,NMC,45,50,100,0.2,0.2,-,MICH_15H_pouch_NMC_45C_50-100_0.2-0.2C_timeseries_data.csv
+Michigan Expansion,07R,Pouch,NMC,25,0,100,2,2,-,MICH_07R_pouch_NMC_25C_0-100_2-2C_timeseries_data.csv
+Michigan Expansion,10R,Pouch,NMC,25,0,100,0.2,1.5,-,MICH_10R_pouch_NMC_25C_0-100_0.2-1.5C_timeseries_data.csv
+Michigan Expansion,08C,Pouch,NMC,-5,0,100,2,2,-,MICH_08C_pouch_NMC_-5C_0-100_2-2C_timeseries_data.csv
+Michigan Expansion,17C,Pouch,NMC,-5,50,100,0.2,1.5,-,MICH_17C_pouch_NMC_-5C_50-100_0.2-1.5C_timeseries_data.csv
+Michigan Expansion,03H,Pouch,NMC,45,0,100,0.2,0.2,-,MICH_03H_pouch_NMC_45C_0-100_0.2-0.2C_timeseries_data.csv
+Michigan Expansion,01R,Pouch,NMC,25,0,100,0.2,0.2,-,MICH_01R_pouch_NMC_25C_0-100_0.2-0.2C_timeseries_data.csv
+Michigan Expansion,14C,Pouch,NMC,-5,50,100,0.2,0.2,-,MICH_14C_pouch_NMC_-5C_50-100_0.2-0.2C_timeseries_data.csv
+Michigan Expansion,09H,Pouch,NMC,45,0,100,2,2,-,MICH_09H_pouch_NMC_45C_0-100_2-2C_timeseries_data.csv
+Michigan Expansion,05C,Pouch,NMC,-5,0,100,1.5,1.5,-,MICH_05C_pouch_NMC_-5C_0-100_1.5-1.5C_timeseries_data.csv
+Michigan Expansion,11C,Pouch,NMC,-5,0,100,0.2,1.5,-,MICH_11C_pouch_NMC_-5C_0-100_0.2-1.5C_timeseries_data.csv
+Michigan Expansion,12H,Pouch,NMC,45,0,100,0.2,1.5,-,MICH_12H_pouch_NMC_45C_0-100_0.2-1.5C_timeseries_data.csv
+SNL,-,18650,LFP,15,0,100,0.5,2,b,SNL_18650_LFP_15C_0-100_0.5-2C_b_timeseries.csv
+SNL,-,18650,LFP,25,20,80,0.5,0.5,b,SNL_18650_LFP_25C_20-80_0.5-0.5C_b_timeseries.csv
+SNL,-,18650,LFP,25,20,80,0.5,0.5,a,SNL_18650_LFP_25C_20-80_0.5-0.5C_a_timeseries.csv
+SNL,-,18650,LFP,25,20,80,0.5,0.5,d,SNL_18650_LFP_25C_20-80_0.5-0.5C_d_timeseries.csv
+SNL,-,18650,LFP,35,0,100,0.5,2,a,SNL_18650_LFP_35C_0-100_0.5-2C_a_timeseries.csv
+SNL,-,18650,LFP,35,0,100,0.5,1,b,SNL_18650_LFP_35C_0-100_0.5-1C_b_timeseries.csv
+SNL,-,18650,LFP,15,0,100,0.5,1,b,SNL_18650_LFP_15C_0-100_0.5-1C_b_timeseries.csv
+SNL,-,18650,LFP,25,0,100,0.5,3,c,SNL_18650_LFP_25C_0-100_0.5-3C_c_timeseries.csv
+SNL,-,18650,LFP,25,0,100,0.5,3,a,SNL_18650_LFP_25C_0-100_0.5-3C_a_timeseries.csv
+SNL,-,18650,LFP,25,0,100,0.5,2,a,SNL_18650_LFP_25C_0-100_0.5-2C_a_timeseries.csv
+SNL,-,18650,LFP,25,40,60,0.5,3,a,SNL_18650_LFP_25C_40-60_0.5-3C_a_timeseries.csv
+SNL,-,18650,LFP,25,0,100,0.5,1,d,SNL_18650_LFP_25C_0-100_0.5-1C_d_timeseries.csv
+SNL,-,18650,LFP,25,40,60,0.5,0.5,b,SNL_18650_LFP_25C_40-60_0.5-0.5C_b_timeseries.csv
+SNL,-,18650,LFP,25,0,100,0.5,1,a,SNL_18650_LFP_25C_0-100_0.5-1C_a_timeseries.csv
+SNL,-,18650,LFP,35,0,100,0.5,1,a,SNL_18650_LFP_35C_0-100_0.5-1C_a_timeseries.csv
+SNL,-,18650,LFP,15,0,100,0.5,2,a,SNL_18650_LFP_15C_0-100_0.5-2C_a_timeseries.csv
+SNL,-,18650,LFP,35,0,100,0.5,1,c,SNL_18650_LFP_35C_0-100_0.5-1C_c_timeseries.csv
+SNL,-,18650,LFP,25,0,100,0.5,3,d,SNL_18650_LFP_25C_0-100_0.5-3C_d_timeseries.csv
+SNL,-,18650,LFP,25,20,80,0.5,0.5,c,SNL_18650_LFP_25C_20-80_0.5-0.5C_c_timeseries.csv
+SNL,-,18650,LFP,25,0,100,0.5,2,b,SNL_18650_LFP_25C_0-100_0.5-2C_b_timeseries.csv
+SNL,-,18650,LFP,25,0,100,0.5,0.5,a,SNL_18650_LFP_25C_0-100_0.5-0.5C_a_timeseries.csv
+SNL,-,18650,LFP,25,0,100,0.5,1,c,SNL_18650_LFP_25C_0-100_0.5-1C_c_timeseries.csv
+SNL,-,18650,LFP,25,0,100,0.5,3,b,SNL_18650_LFP_25C_0-100_0.5-3C_b_timeseries.csv
+SNL,-,18650,LFP,25,40,60,0.5,3,b,SNL_18650_LFP_25C_40-60_0.5-3C_b_timeseries.csv
+SNL,-,18650,LFP,25,0,100,0.5,1,b,SNL_18650_LFP_25C_0-100_0.5-1C_b_timeseries.csv
+SNL,-,18650,LFP,25,20,80,0.5,3,a,SNL_18650_LFP_25C_20-80_0.5-3C_a_timeseries.csv
+SNL,-,18650,LFP,25,40,60,0.5,0.5,a,SNL_18650_LFP_25C_40-60_0.5-0.5C_a_timeseries.csv
+SNL,-,18650,LFP,35,0,100,0.5,2,b,SNL_18650_LFP_35C_0-100_0.5-2C_b_timeseries.csv
+SNL,-,18650,LFP,35,0,100,0.5,1,d,SNL_18650_LFP_35C_0-100_0.5-1C_d_timeseries.csv
+SNL,-,18650,LFP,15,0,100,0.5,1,a,SNL_18650_LFP_15C_0-100_0.5-1C_a_timeseries.csv
+Michigan Expansion,BLForm16,Pouch,NMC,25,0,100,1,1,f,MICH_BLForm16_pouch_NMC_25C_0-100_1-1C_f_timeseries_data.csv
+Michigan Expansion,BLForm5,Pouch,NMC,45,0,100,1,1,e,MICH_BLForm5_pouch_NMC_45C_0-100_1-1C_e_timeseries_data.csv
+Michigan Expansion,BLForm11,Pouch,NMC,25,0,100,1,1,a,MICH_BLForm11_pouch_NMC_25C_0-100_1-1C_a_timeseries_data.csv
+Michigan Expansion,MCForm27,Pouch,NMC,25,0,100,1,1,g,MICH_MCForm27_pouch_NMC_25C_0-100_1-1C_g_timeseries_data.csv
+Michigan Expansion,MCForm21,Pouch,NMC,25,0,100,1,1,a,MICH_MCForm21_pouch_NMC_25C_0-100_1-1C_a_timeseries_data.csv
+Michigan Expansion,MCForm38,Pouch,NMC,45,0,100,1,1,h,MICH_MCForm38_pouch_NMC_45C_0-100_1-1C_h_timeseries_data.csv
+Michigan Expansion,MCForm24,Pouch,NMC,25,0,100,1,1,d,MICH_MCForm24_pouch_NMC_25C_0-100_1-1C_d_timeseries_data.csv
+Michigan Expansion,MCForm22,Pouch,NMC,25,0,100,1,1,b,MICH_MCForm22_pouch_NMC_25C_0-100_1-1C_b_timeseries_data.csv
+Michigan Expansion,MCForm39,Pouch,NMC,45,0,100,1,1,i,MICH_MCForm39_pouch_NMC_45C_0-100_1-1C_i_timeseries_data.csv
+Michigan Expansion,BLForm19,Pouch,NMC,25,0,100,1,1,i,MICH_BLForm19_pouch_NMC_25C_0-100_1-1C_i_timeseries_data.csv
+Michigan Expansion,BLForm18,Pouch,NMC,25,0,100,1,1,h,MICH_BLForm18_pouch_NMC_25C_0-100_1-1C_h_timeseries_data.csv
+Michigan Expansion,MCForm32,Pouch,NMC,45,0,100,1,1,b,MICH_MCForm32_pouch_NMC_45C_0-100_1-1C_b_timeseries_data.csv
+Michigan Expansion,BLForm3,Pouch,NMC,45,0,100,1,1,c,MICH_BLForm3_pouch_NMC_45C_0-100_1-1C_c_timeseries_data.csv
+Michigan Expansion,BLForm14,Pouch,NMC,25,0,100,1,1,d,MICH_BLForm14_pouch_NMC_25C_0-100_1-1C_d_timeseries_data.csv
+Michigan Expansion,BLForm8,Pouch,NMC,45,0,100,1,1,h,MICH_BLForm8_pouch_NMC_45C_0-100_1-1C_h_timeseries_data.csv
+Michigan Expansion,MCForm30,Pouch,NMC,25,0,100,1,1,j,MICH_MCForm30_pouch_NMC_25C_0-100_1-1C_j_timeseries_data.csv
+Michigan Expansion,MCForm31,Pouch,NMC,45,0,100,1,1,a,MICH_MCForm31_pouch_NMC_45C_0-100_1-1C_a_timeseries_data.csv
+Michigan Expansion,MCForm25,Pouch,NMC,25,0,100,1,1,e,MICH_MCForm25_pouch_NMC_25C_0-100_1-1C_e_timeseries_data.csv
+Michigan Expansion,MCForm36,Pouch,NMC,45,0,100,1,1,f,MICH_MCForm36_pouch_NMC_45C_0-100_1-1C_f_timeseries_data.csv
+Michigan Expansion,MCForm34,Pouch,NMC,45,0,100,1,1,d,MICH_MCForm34_pouch_NMC_45C_0-100_1-1C_d_timeseries_data.csv
+Michigan Expansion,MCForm33,Pouch,NMC,45,0,100,1,1,c,MICH_MCForm33_pouch_NMC_45C_0-100_1-1C_c_timeseries_data.csv
+Michigan Expansion,BLForm2,Pouch,NMC,45,0,100,1,1,b,MICH_BLForm2_pouch_NMC_45C_0-100_1-1C_b_timeseries_data.csv
+Michigan Expansion,MCForm28,Pouch,NMC,25,0,100,1,1,h,MICH_MCForm28_pouch_NMC_25C_0-100_1-1C_h_timeseries_data.csv
+Michigan Expansion,BLForm15,Pouch,NMC,25,0,100,1,1,e,MICH_BLForm15_pouch_NMC_25C_0-100_1-1C_e_timeseries_data.csv
+Michigan Expansion,MCForm29,Pouch,NMC,25,0,100,1,1,i,MICH_MCForm29_pouch_NMC_25C_0-100_1-1C_i_timeseries_data.csv
+Michigan Expansion,BLForm9,Pouch,NMC,45,0,100,1,1,i,MICH_BLForm9_pouch_NMC_45C_0-100_1-1C_i_timeseries_data.csv
+Michigan Expansion,BLForm1,Pouch,NMC,45,0,100,1,1,a,MICH_BLForm1_pouch_NMC_45C_0-100_1-1C_a_timeseries_data.csv
+Michigan Expansion,MCForm23,Pouch,NMC,25,0,100,1,1,c,MICH_MCForm23_pouch_NMC_25C_0-100_1-1C_c_timeseries_data.csv
+Michigan Expansion,BLForm13,Pouch,NMC,25,0,100,1,1,c,MICH_BLForm13_pouch_NMC_25C_0-100_1-1C_c_timeseries_data.csv
+Michigan Expansion,MCForm40,Pouch,NMC,45,0,100,1,1,j,MICH_MCForm40_pouch_NMC_45C_0-100_1-1C_j_timeseries_data.csv
+Michigan Expansion,BLForm4,Pouch,NMC,45,0,100,1,1,d,MICH_BLForm4_pouch_NMC_45C_0-100_1-1C_d_timeseries_data.csv
+Michigan Expansion,BLForm17,Pouch,NMC,25,0,100,1,1,g,MICH_BLForm17_pouch_NMC_25C_0-100_1-1C_g_timeseries_data.csv
+Michigan Expansion,MCForm37,Pouch,NMC,45,0,100,1,1,g,MICH_MCForm37_pouch_NMC_45C_0-100_1-1C_g_timeseries_data.csv
+Michigan Expansion,BLForm7,Pouch,NMC,45,0,100,1,1,g,MICH_BLForm7_pouch_NMC_45C_0-100_1-1C_g_timeseries_data.csv
+Michigan Expansion,BLForm6,Pouch,NMC,45,0,100,1,1,f,MICH_BLForm6_pouch_NMC_45C_0-100_1-1C_f_timeseries_data.csv
+Michigan Expansion,BLForm20,Pouch,NMC,25,0,100,1,1,j,MICH_BLForm20_pouch_NMC_25C_0-100_1-1C_j_timeseries_data.csv
+Michigan Expansion,MCForm26,Pouch,NMC,25,0,100,1,1,f,MICH_MCForm26_pouch_NMC_25C_0-100_1-1C_f_timeseries_data.csv
+Michigan Expansion,BLForm12,Pouch,NMC,25,0,100,1,1,b,MICH_BLForm12_pouch_NMC_25C_0-100_1-1C_b_timeseries_data.csv
+Michigan Expansion,BLForm10,Pouch,NMC,25,0,100,1,1,j,MICH_BLForm10_pouch_NMC_25C_0-100_1-1C_j_timeseries_data.csv
+Michigan Expansion,MCForm35,Pouch,NMC,45,0,100,1,1,e,MICH_MCForm35_pouch_NMC_45C_0-100_1-1C_e_timeseries_data.csv
