@@ -1,9 +1,10 @@
 import pandas as pd
 import os
 
-PATH_DESCRIPTION_FILE = 'Metadata-analysis/headers_description.txt'
-PATH_LIST_FILE = 'Metadata-analysis/z - filenames.txt'
-PATH_CSV_FILE = 'Metadata-analysis/filenames.csv'
+# Metadata-analysis/
+PATH_DESCRIPTION_FILE = 'headers_description.txt'
+PATH_LIST_FILE = 'z - filenames.txt'
+PATH_CSV_FILE = 'filenames.csv'
 BASE_DIR = 'Battery_Archive_Data'
 
 
@@ -82,7 +83,7 @@ def pre_process(components: list):
     return components
         
 # formata components e adiciona ao dicionário
-def process_filename(data_dict: dict, components: list):
+def process_filename(data_dict: dict, components: list, filename: str):
     components = pre_process(components)
     
     institution_dict = {
@@ -141,7 +142,10 @@ def process_filename(data_dict: dict, components: list):
     # Group
     # components[9] = components[9]
     data_dict['Group'].append(components[9])
-    
+
+    # Full Filename
+    data_dict['Full Filename'].append(filename)
+
     return data_dict
 
 def build_dataframe_from_names(name_list_file):
@@ -156,7 +160,8 @@ def build_dataframe_from_names(name_list_file):
         'Max SOC (%)'       : [],
         'Charge Rate (C)'   : [],
         'Discharge Rate (C)': [],
-        'Group'             : []
+        'Group'             : [],
+        'Full Filename'     : []
     }
 
     with open(name_list_file, 'r', encoding='utf-8') as f:
@@ -164,7 +169,7 @@ def build_dataframe_from_names(name_list_file):
             filename = line.strip()
             if not filename: continue
             components = parse_filename_components(filename)
-            data_dict = process_filename(data_dict, components)
+            data_dict = process_filename(data_dict, components, filename)
 
     df = pd.DataFrame(data_dict)
     df = df.replace('', 'WARNING')
