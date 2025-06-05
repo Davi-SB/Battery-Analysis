@@ -2,11 +2,10 @@ import pandas as pd
 import os
 
 # Metadata-analysis/
-PATH_DESCRIPTION_FILE = 'headers_description.txt'
-PATH_LIST_FILE = 'z - filenames.txt'
-PATH_CSV_FILE = 'filenames.csv'
+PATH_DESCRIPTION_FILE = 'Metadata-analysis/HeadersOutput/headers_description.txt'
+PATH_LIST_FILE = 'Metadata-analysis/HeadersOutput/z - filenames.txt'
+PATH_CSV_FILE = 'Metadata-analysis/HeadersOutput/filenames.csv'
 BASE_DIR = 'Battery_Archive_Data'
-
 
 def get_subfolders(base_dir):
     return [d for d in os.listdir(base_dir) if os.path.isdir(os.path.join(base_dir, d))]
@@ -67,19 +66,19 @@ def pre_process(components: list):
     # - Michigan pode não ter o 8° componente
     # - SNL não tem cell id
     
-    if components[0] == 'HNEI':
+    if components[1] == 'HNEI':
         # Adiciona o cell id
-        components.insert(1, '-')
-        # Junta components 3 e 4
-        components[3] = components[3] + '-' + components[4]
-        components.pop(4)
-    elif components[0] == 'MICH':
+        components.insert(2, '-')
+        # Junta components 4 e 5
+        components[4] = components[4] + '-' + components[5]
+        components.pop(5)
+    elif components[1] == 'MICH':
         # Adiciona o oitavo componente
-        if components[7] == 'timeseries':
-            components.insert(7, '-')
-    elif components[0] == 'SNL':
+        if components[8] == 'timeseries':
+            components.insert(8, '-')
+    elif components[1] == 'SNL':
         # Adiciona o cell id
-        components.insert(1, '-')
+        components.insert(2, '-')
     return components
         
 # formata components e adiciona ao dicionário
@@ -105,43 +104,47 @@ def process_filename(data_dict: dict, components: list, filename: str):
         '46800'  : '46800',
     }
     
+    # Capacidade
+    # components[0] = components[0]
+    data_dict['Capacity (Ah)'].append(components[0])
+    
     # Instituição
-    components[0] = institution_dict[components[0]] if components[0] in institution_dict else components[0]
-    data_dict['Institution'].append(components[0])
+    components[1] = institution_dict[components[1]] if components[1] in institution_dict else components[1]
+    data_dict['Institution'].append(components[1])
 
     # Cell ID
-    # components[1] = components[1]
-    data_dict['Cell ID'].append(components[1])
+    # components[2] = components[2]
+    data_dict['Cell ID'].append(components[2])
 
     # Form Factor
-    components[2] = formFactor_dict[components[2]] if components[2] in formFactor_dict else components[2]
-    data_dict['Form Factor'].append(components[2])
+    components[3] = formFactor_dict[components[3]] if components[3] in formFactor_dict else components[3]
+    data_dict['Form Factor'].append(components[3])
 
     # Cathode
-    # components[3] = components[3]  
-    data_dict['Cathode'].append(components[3])
+    # components[4] = components[4]  
+    data_dict['Cathode'].append(components[4])
     
     # Temperature
-    components[4] = components[4].replace('C', '')
-    data_dict['Temperature (°C)'].append(components[4])
+    components[5] = components[5].replace('C', '')
+    data_dict['Temperature (°C)'].append(components[5])
     
     # Min-Max SOC
-    min, max = components[5].split('-')
-    components[5] = max
-    components.insert(5, min)
-    data_dict['Min SOC (%)'].append(components[5])
-    data_dict['Max SOC (%)'].append(components[6])
+    min, max = components[6].split('-')
+    components[6] = max
+    components.insert(6, min)
+    data_dict['Min SOC (%)'].append(components[6])
+    data_dict['Max SOC (%)'].append(components[7])
     
     # Charge-Discharge Rate
-    charge, discharge = components[7].split('-')
-    components[7] = discharge.replace('C', '')
-    components.insert(7, charge)
-    data_dict['Charge Rate (C)'].append(components[7])
-    data_dict['Discharge Rate (C)'].append(components[8])
+    charge, discharge = components[8].split('-')
+    components[8] = discharge.replace('C', '')
+    components.insert(8, charge)
+    data_dict['Charge Rate (C)'].append(components[8])
+    data_dict['Discharge Rate (C)'].append(components[9])
     
     # Group
-    # components[9] = components[9]
-    data_dict['Group'].append(components[9])
+    # components[10] = components[10]
+    data_dict['Group'].append(components[10])
 
     # Full Filename
     data_dict['Full Filename'].append(filename)
@@ -151,6 +154,7 @@ def process_filename(data_dict: dict, components: list, filename: str):
 def build_dataframe_from_names(name_list_file):
     # Cria e define o nome das colunas do DataFrame
     data_dict = {
+        'Capacity (Ah)'   : [],
         'Institution'       : [],
         'Cell ID'           : [],
         'Form Factor'       : [],
@@ -175,10 +179,17 @@ def build_dataframe_from_names(name_list_file):
     df = df.replace('', 'WARNING')
     return df
 
+def calculate_currents(df):
+    df['Charge Current (A)'] = df['Capacity (Ah)'].astype(float) * df['Charge Rate (C)'].astype(float)
+    df['Discharge Current (A)'] = df['Capacity (Ah)'].astype(float) * df['Discharge Rate (C)'].astype(float)
+    
+    # Arredonda para duas casas decimais para que os grupos possam ser formados sem considerar diferenças insignificantes como 4.999 != 4.99
+    df['Charge Current (A)'] = df['Charge Current (A)'].round(2)
+    df['Discharge Current (A)'] = df['Discharge Current (A)'].round(2)
+    
+    return df
+
 if __name__ == '__main__':
-    # Garante que a pasta de saída existe
-    if not os.path.exists('Headers-analysis'):
-        os.makedirs('Headers-analysis')
         
     # Limpa/Cria arquivos de saída
     open(PATH_DESCRIPTION_FILE, 'w', encoding='utf-8').close()
@@ -192,6 +203,29 @@ if __name__ == '__main__':
     print(f"Arquivos {PATH_DESCRIPTION_FILE} e {PATH_LIST_FILE} atualizados")
             
     df = build_dataframe_from_names(PATH_LIST_FILE)
+    
+    # Adiciona colunas calculadas de corrente
+    df = calculate_currents(df)
+    
+    # Organiza a ordem das colunas
+    collumn_order = [
+        'Institution',
+        'Cell ID',
+        'Form Factor',
+        'Cathode',
+        'Temperature (°C)',
+        'Min SOC (%)',
+        'Max SOC (%)',
+        'Charge Rate (C)',
+        'Discharge Rate (C)',
+        'Group',
+        'Capacity (Ah)',
+        'Charge Current (A)',
+        'Discharge Current (A)',
+        'Full Filename'
+    ]
+    df = df[collumn_order]
     df.to_csv(PATH_CSV_FILE, index=False, encoding='utf-8')
+    
     print(f"Arquivo {PATH_CSV_FILE} atualizado")
     print("Análise concluida com sucesso")
