@@ -42,8 +42,6 @@ matchingFeatures = [
         'Discharge Current (A)',
     ]
 
-# ❗❗❗❗❗❗ Duvida: o que fazer com as capacidades aqui? Tirar já que a corrente é calculada a partir dela e é o que importa, ou deixar?
-
 # Grupo A: Apenas Charge Current variando, resto constante. Tudo tem que ser igual, exceto Charge Current
 groupA_matchingFeatures = matchingFeatures.copy()
 groupA_matchingFeatures.remove('Charge Current (A)')
