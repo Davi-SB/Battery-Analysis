@@ -88,7 +88,7 @@ def executar_modelo_cpp(mu, sigma, num_p=4, num_s=2, pmin=0, sohm=70, architectu
     output_csv_path = output_dir + "simulation_mtta.csv"
     comando = [
         "mtta_simulation.exe", "--mu", str(mu), "--sigma", str(sigma), "--np", str(num_p), "--ns", str(num_s), "--pmin", str(pmin),
-        "--sohm", str(sohm), "--architecture", str(architecture), "--output-dir", str(output_dir)
+        "--sohm", str(sohm), "--architecture", str(architecture), "--output-dir", ("ignoreMe"+str(output_dir))
     ]
     
     st.info(f"Executando a simulação com Rede de Petri...")
