@@ -80,27 +80,13 @@ with col3:
             cel_voltage = 3.6
         with subA_col2:
             bat_voltage = st.number_input("Tensão Nominal Bateria (V):", min_value=cel_voltage, value=18.0, step=0.5, format="%.2f")
-        
-    with st.container(border=True, height=420):
+    
+    st.write("")  # Espaçador  
+    with st.container(border=True):
         st.write("**Definir Capacidade Nominal**")
         subB_col1, subB_col2 = st.columns(2)
         with subB_col1:
-            modo_capacidade_cel = st.radio("Modo de entrada:", ["Capacidade", "Corrente e Tempo"], key="modo_capacidade_cel", horizontal=False)
-            if modo_capacidade_cel == "Capacidade":
-                df_filtered = criar_selectbox_filtrado(df_filtered, 'Capacity (Ah)', st, label="Capacidade Célula (Ah)")
-            else:
-                #subC_col1, subC_col2 = st.columns(2)
-                corrente = st.number_input("Corrente Célula (A)", min_value=0.01, value=1.0, step=0.5, format="%.2f")
-                tempo = st.number_input("Tempo (h)", min_value=0.01, value=1.0, step=0.5, format="%.2f")
-                capacidade_calculada = corrente * tempo
-                capacidades_disponiveis = df_filtered['Capacity (Ah)'].unique()
-                if len(capacidades_disponiveis) > 0:
-                    idx_mais_proximo = (np.abs(capacidades_disponiveis - capacidade_calculada)).argmin()
-                    capacidade_mais_proxima = capacidades_disponiveis[idx_mais_proximo]
-                    st.info(f"Calculado: {capacidade_calculada:.2f} Ah. Usando a mais próxima: **{capacidade_mais_proxima} Ah**")
-                    df_filtered = df_filtered[df_filtered['Capacity (Ah)'] == capacidade_mais_proxima]
-                else:
-                    st.warning("Nenhuma capacidade disponível para os filtros atuais.")
+            df_filtered = criar_selectbox_filtrado(df_filtered, 'Capacity (Ah)', st, label="Capacidade Célula (Ah)")
                     
         with subB_col2:
             modo_capacidade_bat = st.radio("Modo de entrada:", ["Capacidade", "Corrente e Tempo"], key="modo_capacidade_bat", horizontal=False)
@@ -112,7 +98,7 @@ with col3:
                 tempo = st.number_input("Tempo (h) ", min_value=0.01, value=1.0, step=0.5, format="%.2f")
                 bat_cap = corrente * tempo
                 st.write("")
-                st.info(f"Calculado: {bat_cap:.2f} Ah")
+                #st.info(f"Calculado: {bat_cap:.2f} Ah")
 
 # --- Expander com Resultados Filtrados (em tempo real) ---
 st.write("") # Espaçador
