@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import subprocess
-import os
+import math
 
 def rodar_fitting(caminho_arquivo):
     st.info(f"Iniciando o fitting para o arquivo: {caminho_arquivo}...")
@@ -68,19 +68,27 @@ def rodar_fitting(caminho_arquivo):
     return mean, std
 
 # falta implementar
-def calcular_arquitetura(selecao):
+def calcular_arquitetura(v_bat, C_bat, v_cel, C_cel):
     st.info("Calculando a arquitetura da célula...")
-    catodo = selecao['Cathode']
-    form_factor = selecao['Form Factor']
-    return f"Arquitetura: NAO IMPLEMENTADO com Cátodo {catodo} e formato {form_factor}"
+
+    n_series   = math.ceil(v_bat / v_cel)
+    n_parallel = math.ceil(C_bat / C_cel)
+    total      = n_series * n_parallel
+    
+    return (n_series, n_parallel, total)
 
 # falta implementar
-def executar_modelo_cpp():
-    # ... (código da função executar_modelo_cpp permanece o mesmo) ...
+def executar_modelo_cpp(num_p=4, num_s=2, pmin=0, sohm=70, architecture='sp', output_dir=''):
+    # num_p é o número de células em paralelo
+    # num_s é o número de células em série
+    # pmin é o número de células em paralelo que o sistema suporta no mínimo
+    # sohm é o valor mínimo de soh pra declarar a falha da célula
+    # architecture é a arquitetura da bateria (sp ou ps)
+    
     output_csv_path = "mtta_results.csv"
     comando = [
-        "mtta_simulation.exe", "--np", "4", "--ns", "2", "--pmin", "0",
-        "--sohm", "70", "--architecture", "sp", "--output-dir", ""
+        "mtta_simulation.exe", "--np", str(num_p), "--ns", str(num_s), "--pmin", str(pmin),
+        "--sohm", str(sohm), "--architecture", str(architecture), "--output-dir", str(output_dir)
     ]
     st.info(f"Executando o comando: `{' '.join(comando)}`")
     log_placeholder = st.empty()
@@ -105,7 +113,7 @@ def executar_modelo_cpp():
         else:
             st.error("Ocorreu um erro ao executar o modelo C++.")
             st.code(f"Código de Erro: {processo.returncode}\n{stderr_output}")
-            return None
+            return output_csv_path # retorna mesmo assim pra caso retorno != 0 não seja um erro fatal
     except FileNotFoundError:
         log_placeholder.empty()
         st.warning("⚠️ **Executável não encontrado!** Usando dados simulados.")
