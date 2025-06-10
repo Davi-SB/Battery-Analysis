@@ -42,7 +42,7 @@ bat_cap     = -9999999
 
 # --- INTERFACE DO USUÁRIO ---
 st.write("")  # Espaçador
-st.subheader("Selecione os filtros desejados")
+st.subheader("Insira as informações desejadas")
 
 def criar_selectbox_filtrado(df, coluna, st_element, label=None):
     if label is None: label = coluna
@@ -57,31 +57,36 @@ col1, col2, col3 = st.columns([1, 1, 2])
 df_filtered = filenames_df.copy()
 
 with col1:
-    with st.container(border=True, height=200):
+    with st.container(border=True, height=230):
         df_filtered = criar_selectbox_filtrado(df_filtered, 'Institution', st)
         df_filtered = criar_selectbox_filtrado(df_filtered, 'Form Factor', st)
-    with st.container(border=True, height=200):
+    with st.container(border=True, height=235):
         df_filtered = criar_selectbox_filtrado(df_filtered, 'Cathode', st)
         df_filtered = criar_selectbox_filtrado(df_filtered, 'Temperature (°C)', st)
 with col2:
-    with st.container(border=True, height=200):
+    with st.container(border=True, height=230):
         df_filtered = criar_selectbox_filtrado(df_filtered, 'Min SOC (%)', st)
         df_filtered = criar_selectbox_filtrado(df_filtered, 'Max SOC (%)', st)
-    with st.container(border=True, height=200):
+    with st.container(border=True, height=235):
         df_filtered = criar_selectbox_filtrado(df_filtered, 'Charge Rate (C)', st)
         df_filtered = criar_selectbox_filtrado(df_filtered, 'Discharge Rate (C)', st)
 with col3:
-    with st.container(border=True, height=150):
-        st.write("**Definir Tensão Nominal**")
-        subA_col1, subA_col2 = st.columns(2)
-        with subA_col1:
+    subA_col1, subA_col2 = st.columns(2)
+    with subA_col1:
+        with st.container(border=True, height=230):
+            st.write("**Definir Tensão Nominal**")
             # Tensão da célula congelada em 3.6V
             cel_voltage = st.number_input("Tensão da Célula (V) [fixo]:", min_value=0.01, value=3.6, step=0.000001, format="%.2f")
             cel_voltage = 3.6
-        with subA_col2:
             bat_voltage = st.number_input("Tensão Nominal Bateria (V):", min_value=cel_voltage, value=18.0, step=0.5, format="%.2f")
+    with subA_col2:
+        with st.container(border=True, height=230):
+            st.write("**Definir Arquiterura**")
+            # Input para saber se a arquitetura é sp ou ps
+            arquitetura = st.radio("Arquitetura da Bateria:", ["Série-Paralelo (sp)", "Paralelo-Série (ps)"], key="arquitetura_bat", horizontal=False)
+            if arquitetura == "Série-Paralelo (sp)": bat_arq = "sp"
+            else: bat_arq = "ps"
     
-    st.write("")  # Espaçador  
     with st.container(border=True):
         st.write("**Definir Capacidade Nominal**")
         subB_col1, subB_col2 = st.columns(2)
@@ -129,12 +134,14 @@ if gerar_button:
             C_cel=linha_selecionada['Capacity (Ah)']
         )
         resultado_cpp_csv = executar_modelo_cpp(
-            num_s=n_series,
-            num_p=n_paralel,
+            mu=media,
+            sigma=desvio_padrao,
+            num_s= 1, #n_series,
+            num_p= 1, #n_paralel,
             pmin=0,
-            sohm=70,
-            architecture='sp',
-            output_dir=""
+            sohm=95,
+            architecture=bat_arq,
+            output_dir="MTTA-Output/"
         )
 
         mtta_df = pd.read_csv(resultado_cpp_csv).sort_values(by='MTTA').reset_index(drop=True)
@@ -153,7 +160,8 @@ if gerar_button:
                     st.write(f"Células em Paralelo (np): **{n_paralel}**")
                     st.write(f"Total de Células: **{total_cels}**")
                     st.success(f"Configuração Final: {n_series}S{n_paralel}P")
-                                        # 2. Célula Base Utilizada na Simulação
+                    
+                    # 2. Célula Base Utilizada na Simulação
                     st.subheader("Célula Base Selecionada")
                     # Assumindo que 'linha_selecionada' e 'cel_voltage' estão disponíveis
                     st.write(f"Cátodo: **{linha_selecionada['Cathode']}**")
@@ -163,10 +171,10 @@ if gerar_button:
 
             with res_col2:  
                 with st.container(border=True, height=500):        
-                    st.subheader("Gráfico de Probabilidade Acumulada (do Modelo C++)")
+                    st.subheader("Probabilidade Acumulada (com Rede de Petri)")
                     st.line_chart(mtta_df, x='MTTA', y='prob_acumulada', height=430)
                 
-            with st.expander("Ver dados de MTTA gerados pelo modelo C++"):
+            with st.expander("Ver dados de MTTA gerados pela simulação com Rede de Petri"):
                 st.dataframe(mtta_df)
     else:
         st.error("**Nenhuma combinação encontrada.**")

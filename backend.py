@@ -78,22 +78,24 @@ def calcular_arquitetura(v_bat, C_bat, v_cel, C_cel):
     return (n_series, n_parallel, total)
 
 # falta implementar
-def executar_modelo_cpp(num_p=4, num_s=2, pmin=0, sohm=70, architecture='sp', output_dir=''):
+def executar_modelo_cpp(mu, sigma, num_p=4, num_s=2, pmin=0, sohm=70, architecture='sp', output_dir=''):
     # num_p é o número de células em paralelo
     # num_s é o número de células em série
     # pmin é o número de células em paralelo que o sistema suporta no mínimo
     # sohm é o valor mínimo de soh pra declarar a falha da célula
     # architecture é a arquitetura da bateria (sp ou ps)
     
-    output_csv_path = "mtta_results.csv"
+    output_csv_path = output_dir + "simulation_mtta.csv"
     comando = [
-        "mtta_simulation.exe", "--np", str(num_p), "--ns", str(num_s), "--pmin", str(pmin),
+        "mtta_simulation.exe", "--mu", str(mu), "--sigma", str(sigma), "--np", str(num_p), "--ns", str(num_s), "--pmin", str(pmin),
         "--sohm", str(sohm), "--architecture", str(architecture), "--output-dir", str(output_dir)
     ]
-    st.info(f"Executando o comando: `{' '.join(comando)}`")
+    
+    st.info(f"Executando a simulação com Rede de Petri...")
     log_placeholder = st.empty()
     log_placeholder.code("Iniciando a simulação...")
     log_estatico, linha_progresso_recente = [], ""
+    
     try:
         processo = subprocess.Popen(comando, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding='utf-8', bufsize=1)
         for linha in iter(processo.stdout.readline, ''):
@@ -108,7 +110,7 @@ def executar_modelo_cpp(num_p=4, num_s=2, pmin=0, sohm=70, architecture='sp', ou
         stderr_output = processo.stderr.read()
         log_placeholder.empty()
         if processo.returncode == 0:
-            st.success("Modelo C++ ('mtta_simulation.exe') executado com sucesso!")
+            st.success("Simulação com Rede de Petri executada com sucesso!")
             return output_csv_path
         else:
             st.error("Ocorreu um erro ao executar o modelo C++.")
