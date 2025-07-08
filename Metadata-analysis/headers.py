@@ -1,4 +1,6 @@
+from scipy.stats import norm 
 import pandas as pd
+import numpy as np
 import os
 
 # Metadata-analysis/
@@ -189,6 +191,87 @@ def calculate_currents(df):
     
     return df
 
+def run_fitting(caminho_arquivo):    
+    try:
+        df = pd.read_csv(caminho_arquivo)
+    except FileNotFoundError:
+        print(f"Arquivo de dados não encontrado em: {caminho_arquivo}")
+        return None, None
+
+    if df.empty:
+        print(f"Arquivo {caminho_arquivo} está vazio.")
+        input("Pressione Enter para continuar...")
+        return None, None
+    # Capacidade nominal (máxima global)
+    nominal_capacity = df['Discharge_Capacity (Ah)'].max()
+    
+    # Para cada ciclo, extrai a maior capacidade
+    cycles_capacity = df.groupby('Cycle_Index')['Discharge_Capacity (Ah)'].max().reset_index()
+    cycles_capacity.columns = ['Cycle_Index', 'Max_Discharge_Capacity']
+    cycles_capacity['SOH_discharge'] = (cycles_capacity['Max_Discharge_Capacity'] / nominal_capacity)
+
+    # Seleciona as features de interesse e agrupa por ciclo
+    df_grouped = df[['Cycle_Index', 'Cell_Temperature (C)']].groupby('Cycle_Index', as_index=False).mean()
+
+    # Adição do SOH calculado
+    df_grouped['SOH_discharge'] = cycles_capacity['SOH_discharge']
+
+    # Define thresholds de SOH de 100% a 1%
+    thresholds = np.arange(1.00, 0.00, -0.01)
+
+    soh = df_grouped['SOH_discharge'].values
+    cycles = df_grouped['Cycle_Index'].values
+
+    # Inverte para que o SOH fique crescente para a interpolação
+    xp = soh[::-1]
+    fp = cycles[::-1]
+    
+    # Filtra thresholds para o intervalo de SOH real dos dados
+    valid_thresholds = thresholds[(thresholds >= xp.min()) & (thresholds <= xp.max())]
+
+    # np.interp estima os ciclos para cada threshold de SOH
+    estimated_cycles = np.interp(valid_thresholds, xp, fp)
+
+    df_estimates = pd.DataFrame({
+        'SOH_threshold': valid_thresholds,
+        'estimated_cycle': estimated_cycles
+    })
+    df_estimates['SOH_threshold'] = df_estimates['SOH_threshold'].astype(float).round(2)
+
+    # Calcula o NCD1% (Number of Cycles Drop para cada 1% de SOH)
+    df_estimates['NCD1%'] = df_estimates['estimated_cycle'].diff()
+
+    # Prepara os dados de NCD1% para o fitting
+    data = df_estimates["NCD1%"].dropna().values
+    
+    if len(data) < 2:
+        print("Não há dados de NCD1% suficientes para realizar o fitting.")
+        return None, None
+
+    # Faz o fitting para encontrar os parâmetros da distribuição normal
+    mean, std = norm.fit(data)
+
+    print(f"Fitting concluído: μ={mean:.2f}, σ={std:.2f}")
+    
+    return mean, std
+
+def calculate_mean_std(df):
+    # para cada linha de df, pega o nome do arquivo daquela linha
+    for index, row in df.iterrows():
+        filename = row['Full Filename']
+        print(f"Processando arquivo: {filename}")
+        # chama run_fitting passando o caminho do arquivo
+        mean, std = run_fitting(os.path.join('Battery_Archive_Data_NoSubDirs', filename))
+        # adiciona os resultados ao df
+        if mean is None or std is None:
+            print(f"Erro ao processar o arquivo {filename}. Definindo valores como NaN.")
+            mean, std = np.nan, np.nan
+        
+        df.at[index, 'Mean NCD1%'] = mean
+        df.at[index, 'Std NCD1%'] = std
+        
+    return df
+
 if __name__ == '__main__':
         
     # Limpa/Cria arquivos de saída
@@ -207,6 +290,9 @@ if __name__ == '__main__':
     # Adiciona colunas calculadas de corrente
     df = calculate_currents(df)
     
+    # Adiciona colunas mean e std de NCD1%
+    df = calculate_mean_std(df)
+    
     # Organiza a ordem das colunas
     collumn_order = [
         'Institution',
@@ -222,7 +308,9 @@ if __name__ == '__main__':
         'Capacity (Ah)',
         'Charge Current (A)',
         'Discharge Current (A)',
-        'Full Filename'
+        'Mean NCD1%',
+        'Std NCD1%',
+        'Full Filename',
     ]
     df = df[collumn_order]
     df.to_csv(PATH_CSV_FILE, index=False, encoding='utf-8')

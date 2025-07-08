@@ -172,7 +172,7 @@ if gerar_button:
             with res_col2:  
                 with st.container(border=True, height=500):        
                     st.subheader("Probabilidade Acumulada (com Rede de Petri)")
-                    st.line_chart(mtta_df, x='MTTA', y='prob_acumulada', height=430)
+                    st.line_chart(mtta_df, x='MTTA', y='prob_acumulada', height=430, color='#88d574')
                 
             with st.expander("Ver dados de MTTA gerados pela simulação com Rede de Petri"):
                 st.dataframe(mtta_df)
