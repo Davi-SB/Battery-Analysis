@@ -2,7 +2,7 @@
 
 # Os dataFrames deve ser juntados utilizando a coluna "Full Filename" como chave. Feito isso, as seguintes colunas devem ser adicionadas:
 
-# - Coluna que mede a diferença em módulo das colunas "Charge Weighted Average" e a coluna "Charge Current (A)".
+# - Coluna que mede a diferença em módulo das colunas "Charge Weighted Average (A)" e a coluna "Charge Current (A)".
 # - Coluna que mede a diferença percentual dessa diferença de carga
 # - Coluna que mede a diferença em módulo das colunas "Disharge_Weighted_Average" e a coluna "Discharge Current (A)".
 # - Coluna que mede a diferença percentual dessa diferença de discarga
@@ -32,40 +32,53 @@ try:
         how='outer'
     )
 
+    # Apply abs to all numeric columns
+    numeric_cols = merged_df.select_dtypes(include=[np.number]).columns
+    merged_df[numeric_cols] = merged_df[numeric_cols].abs()
+
     # Calculate absolute difference for Charge
     # Ensure columns exist before calculation to prevent KeyError
-    if 'Charge Weighted Average' in merged_df.columns and 'Charge Current (A)' in merged_df.columns:
-        merged_df['Charge_Abs_Difference'] = (merged_df['Charge Weighted Average'] - merged_df['Charge Current (A)']).abs()
+    if 'Charge Weighted Average (A)' in merged_df.columns and 'Charge Current (A)' in merged_df.columns:
+        merged_df['Charge Abs Difference'] = (merged_df['Charge Weighted Average (A)'] - merged_df['Charge Current (A)']).abs()
         # Avoid division by zero for percentage difference
-        merged_df['Charge_Percentage_Difference'] = merged_df.apply(
-            lambda row: (row['Charge_Abs_Difference'] / row['Charge Current (A)']) * 100
+        merged_df['Charge Percentage Difference'] = merged_df.apply(
+            lambda row: (row['Charge Abs Difference'] / row['Charge Current (A)']) * 100
             
             if pd.notna(row['Charge Current (A)']) and row['Charge Current (A)'] != 0 else np.nan,
             axis=1
         )
     else:
-        print("Warning: Missing 'Charge Weighted Average' or 'Charge Current (A)' column. Skipping charge difference calculations.")
+        print("Warning: Missing 'Charge Weighted Average (A)' or 'Charge Current (A)' column. Skipping charge difference calculations.")
         input("Press Enter to continue...")
 
     # Calculate absolute difference for Discharge
-    if 'Discharge Weighted Average' in merged_df.columns and 'Discharge Current (A)' in merged_df.columns:
-        merged_df['Discharge_Abs_Difference'] = (merged_df['Discharge Weighted Average'] - merged_df['Discharge Current (A)']).abs()
+    if 'Discharge Weighted Average (A)' in merged_df.columns and 'Discharge Current (A)' in merged_df.columns:
+        merged_df['Discharge Abs Difference'] = (merged_df['Discharge Weighted Average (A)'] - merged_df['Discharge Current (A)']).abs()
         
-        merged_df['Discharge_Percentage_Difference'] = merged_df.apply(
-            lambda row: (row['Discharge_Abs_Difference'] / row['Discharge Current (A)']) * 100
+        merged_df['Discharge Percentage Difference'] = merged_df.apply(
+            lambda row: (row['Discharge Abs Difference'] / row['Discharge Current (A)']) * 100
             if pd.notna(row['Discharge Current (A)']) and row['Discharge Current (A)'] != 0 else np.nan,
             axis=1
         )
     else:
-        print("Warning: Missing 'Discharge Weighted Average' or 'Discharge Current (A)' column. Skipping discharge difference calculations.")
+        print("Warning: Missing 'Discharge Weighted Average (A)' or 'Discharge Current (A)' column. Skipping discharge difference calculations.")
         input("Press Enter to continue...")
 
     # Select and reorder the columns for the final DataFrame
+    # merged_df = merged_df[[
+    #     'Institution', 
+    #     'Charge Current (A)','Charge Weighted Average (A)', 'Charge Abs Difference', 'Charge Percentage Difference',
+    #     'Discharge Current (A)','Discharge Weighted Average (A)', 'Discharge Abs Difference', 'Discharge Percentage Difference',
+    #     'Full Filename'
+    # ]]
+    
     merged_df = merged_df[[
-    'Institution', 
-    'Charge Current (A)','Charge Weighted Average', 'Charge_Abs_Difference', 'Charge_Percentage_Difference',
-    'Discharge Current (A)','Discharge Weighted Average', 'Discharge_Abs_Difference', 'Discharge_Percentage_Difference',
-    'Full Filename'
+        'Institution', 
+        'Charge Current (A)', 'Discharge Current (A)', 
+        'Charge Weighted Average (A)', 'Discharge Weighted Average (A)', 
+        'Charge Abs Difference', 'Discharge Abs Difference',
+        'Discharge Percentage Difference', 'Charge Percentage Difference', 
+        'Full Filename'
     ]]
 
     # Save the combined DataFrame to a new CSV

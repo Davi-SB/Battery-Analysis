@@ -58,8 +58,8 @@ def main():
                     # Armazena os resultados
                     results.append({
                         'Full Filename': file_name,
-                        'Charge Weighted Average': weighted_averages['charge_weighted_average'],
-                        'Discharge Weighted Average': weighted_averages['discharge_weighted_average']
+                        'Charge Weighted Average (A)': weighted_averages['charge_weighted_average'],
+                        'Discharge Weighted Average (A)': weighted_averages['discharge_weighted_average']
                     })
                 else:
                     print(f"    Erro: O arquivo '{file_name}' não contém as colunas 'Current (A)' e/ou 'Test_Time (s)'. Pulando.")
