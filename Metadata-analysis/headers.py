@@ -203,6 +203,7 @@ def run_fitting(caminho_arquivo):
         input("Pressione Enter para continuar...")
         return None, None
     # Capacidade nominal (máxima global)
+    # TODO: usar capacidade informada no archive e não a do dataset
     nominal_capacity = df['Discharge_Capacity (Ah)'].max()
     
     # Para cada ciclo, extrai a maior capacidade
@@ -249,6 +250,7 @@ def run_fitting(caminho_arquivo):
         return None, None
 
     # Faz o fitting para encontrar os parâmetros da distribuição normal
+    # TODO: para cada instituição, fazer um plot do fit para cada instituição, pra ver se a distribuição se encaixa
     mean, std = norm.fit(data)
 
     print(f"Fitting concluído: μ={mean:.2f}, σ={std:.2f}")

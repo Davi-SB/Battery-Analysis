@@ -15,7 +15,7 @@ def calculate_weighted_average(df: pd.DataFrame) -> dict:
     df['Time_Interval'] = df['Test_Time (s)'].diff().fillna(0)
 
     # Separate charge and discharge currents
-    charge_df = df[df['Current (A)'] >= 0].copy()
+    charge_df = df[df['Current (A)'] > 0].copy()
     discharge_df = df[df['Current (A)'] < 0].copy()
 
     # Calculate weighted average for charge
@@ -39,13 +39,15 @@ def calculate_weighted_average(df: pd.DataFrame) -> dict:
 def main():
     folder_path = "Battery_Archive_Data_NoSubDirs"
     results = []
-
+    count = 0
     # Itera sobre todos os arquivos dentro da pasta
     for file_name in os.listdir(folder_path):
         if file_name.endswith(".csv") and ("timeseries" in file_name):
             file_path = os.path.join(folder_path, file_name)
             print(f"  Processando arquivo: {file_name}")
-
+            if count > 8:
+                break
+            count += 1
             try:
                 # Carrega o CSV
                 df = pd.read_csv(file_path)
