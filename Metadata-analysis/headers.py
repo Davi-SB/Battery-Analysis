@@ -1,4 +1,5 @@
-from scipy.stats import norm 
+from scipy.stats import norm
+from tqdm import tqdm
 import pandas as pd
 import numpy as np
 import os
@@ -123,7 +124,7 @@ def process_filename(data_dict: dict, components: list, filename: str):
     data_dict['Form Factor'].append(components[3])
 
     # Cathode
-    # components[4] = components[4]  
+    # components[4] = components[4]
     data_dict['Cathode'].append(components[4])
     
     # Temperature
@@ -191,7 +192,7 @@ def calculate_currents(df):
     
     return df
 
-def run_fitting(caminho_arquivo):    
+def run_fitting(caminho_arquivo):
     try:
         df = pd.read_csv(caminho_arquivo)
     except FileNotFoundError:
@@ -203,8 +204,9 @@ def run_fitting(caminho_arquivo):
         input("Pressione Enter para continuar...")
         return None, None
     # Capacidade nominal (máxima global)
-    # TODO: usar capacidade informada no archive e não a do dataset
-    nominal_capacity = df['Discharge_Capacity (Ah)'].max()
+    # ---> usar capacidade informada no archive e não a do dataset
+    # nominal_capacity = df['Discharge_Capacity (Ah)'].max()
+    nominal_capacity = float(caminho_arquivo.split('\\')[-1].split('_')[0])
     
     # Para cada ciclo, extrai a maior capacidade
     cycles_capacity = df.groupby('Cycle_Index')['Discharge_Capacity (Ah)'].max().reset_index()
@@ -283,7 +285,7 @@ if __name__ == '__main__':
 
     with open(PATH_DESCRIPTION_FILE, 'w', encoding='utf-8') as desc:
         subfolders = get_subfolders(BASE_DIR)
-        for folder in subfolders:
+        for folder in tqdm(subfolders):
             process_folder(folder, BASE_DIR, desc, PATH_LIST_FILE)
     print(f"Arquivos {PATH_DESCRIPTION_FILE} e {PATH_LIST_FILE} atualizados")
             

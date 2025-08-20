@@ -1,14 +1,3 @@
-# Faça um código python que gere um CSV relatório a partir de dois outros:  "Metadata-analysis\CurrentsReview\weighted_averages_results.csv" e "Metadata-analysis\HeadersOutput\filenames.csv". 
-
-# Os dataFrames deve ser juntados utilizando a coluna "Full Filename" como chave. Feito isso, as seguintes colunas devem ser adicionadas:
-
-# - Coluna que mede a diferença em módulo das colunas "Charge Weighted Average (A)" e a coluna "Charge Current (A)".
-# - Coluna que mede a diferença percentual dessa diferença de carga
-# - Coluna que mede a diferença em módulo das colunas "Disharge_Weighted_Average" e a coluna "Discharge Current (A)".
-# - Coluna que mede a diferença percentual dessa diferença de discarga
-
-# Salve esse novo dataframe como "Metadata-analysis\CurrentsReview\currentReview"
-
 import os
 import numpy as np
 import pandas as pd
@@ -66,18 +55,18 @@ try:
 
     # Select and reorder the columns for the final DataFrame
     # merged_df = merged_df[[
-    #     'Institution', 
+    #     'Institution',
     #     'Charge Current (A)','Charge Weighted Average (A)', 'Charge Abs Difference', 'Charge Percentage Difference',
     #     'Discharge Current (A)','Discharge Weighted Average (A)', 'Discharge Abs Difference', 'Discharge Percentage Difference',
     #     'Full Filename'
     # ]]
     
     merged_df = merged_df[[
-        'Institution', 
-        'Charge Current (A)', 'Discharge Current (A)', 
-        'Charge Weighted Average (A)', 'Discharge Weighted Average (A)', 
+        'Institution',
+        'Charge Current (A)', 'Discharge Current (A)',
+        'Charge Weighted Average (A)', 'Discharge Weighted Average (A)',
         'Charge Abs Difference', 'Discharge Abs Difference',
-        'Discharge Percentage Difference', 'Charge Percentage Difference', 
+        'Discharge Percentage Difference', 'Charge Percentage Difference',
         'Full Filename'
     ]]
 
