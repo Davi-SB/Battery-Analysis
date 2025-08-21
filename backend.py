@@ -67,7 +67,6 @@ def rodar_fitting(caminho_arquivo):
     
     return mean, std
 
-# falta implementar
 def calcular_arquitetura(v_bat, C_bat, v_cel, C_cel):
     st.info("Calculando a arquitetura da célula...")
 
@@ -77,7 +76,6 @@ def calcular_arquitetura(v_bat, C_bat, v_cel, C_cel):
     
     return (n_series, n_parallel, total)
 
-# falta implementar
 def executar_modelo_cpp(mu, sigma, num_p=4, num_s=2, pmin=0, sohm=70, architecture='sp', output_dir=''):
     # num_p é o número de células em paralelo
     # num_s é o número de células em série
