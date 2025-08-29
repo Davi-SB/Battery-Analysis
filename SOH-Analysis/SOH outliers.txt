@@ -1,0 +1,9 @@
+CALCE - OK
+HNEI - OK
+MICH Ex - OK
+Oxford - OK
+SNL NCA - OK
+SNL NMC - OK
+MICH For - rmv_outliers_boxplot
+SNL LFP - Funcionando, mas aparenta pouca variação de SOH
+UL Purdue - Funcionando, mas aparenta pouca variação de SOH
